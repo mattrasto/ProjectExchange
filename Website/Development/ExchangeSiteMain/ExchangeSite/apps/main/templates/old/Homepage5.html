@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>BitSomething</title>
+        <link rel="shortcut icon" href="../static/images/favicon.ico">
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="../static/Homepage5.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--    <script type="text/javascript" src="scripts/Homepage.js"></script>    -->
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <!--Header Bar (Top) - "Stats" on PD--> 
+                <div class="center">
+                    <div class="statdescription" id="statdescription1">
+                        <p>Bid</p>
+                    </div>
+                    <div class="statvalue" id="statvalue1">
+                        <p>{{ bid_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription2">
+                        <p>Latest</p>
+                    </div>
+                    <div class="statvalue" id="statvalue2">
+                        <p>{{ latest_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription3">     
+                        <p>Ask</p>
+                    </div>
+                    <div class="statvalue" id="statvalue3">
+                        <p>{{ ask_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription4">
+                        <a class="headerlink" href="/register/">Register</a>
+                    </div>
+                    <div class="statdescription" id="statdescription5">
+                        <a class="headerlink" href="/login/">Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="banner">
+                <!--Banner Bar (Middle) - "Banner" on PD-->
+                <div class="center">
+                    <div class="bannerlogo">
+                        <a href="/"><img src=../static/images/graylogo.png style=width:300px;height:120px;></a>
+                    </div>
+                    <div class="bannerspace">
+                        <div class="menubar">
+                           <form name="input" action="/" method="get">
+                                <input class="menubutton" id="firstmenubutton" type="submit" value="Home">
+                            </form>
+                            <form name="input" action="/orderbook/" method="get">
+                                <input class="menubutton" type="submit" value="Trade">
+                            </form>
+                            <form name="input" action="/orderbook/" method="get">
+                                <input class="menubutton" id="middlemenubutton" type="submit" value="Orders">
+                            </form>
+                            <form name="input" action="/orderbook/" method="get">
+                                <input class="menubutton" type="submit" value="Account">
+                            </form>
+                            <form name="input" action="/orderbook/" method="get">
+                                <input class="menubutton" id="lastmenubutton" type="submit" value="About">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="underbody">
+                <div class="center">
+                    <div id="callblock">
+                        <div id="callblockheader">
+                            <h3>{{ user_count }} have started earning</h3>
+                        </div>
+                        <div id="callblockcontent">
+                            <h2>Join them</h2>
+                            <form name="input" action="/register/" method="get">
+                                <input id="callbutton" type="submit" value="Make it {{ user_count|add:"1" }}">
+                            </form>
+                        </div>
+                    </div>
+                    <div id="featuresblock">
+                        <div class="tricolumn" id="tricolumn1">
+                            <div class="tricolumnheader">
+                                <h3>Your Money</h3>
+                            </div>
+                            <div class="tricolumncontent">
+                                <img src=../static/images/bluelock.png style=width:64px;height:64px;>
+                                <h2>Secure</h2>
+                                Double Verification<br>
+                                -----<br>
+                                Regular Audits<br>
+                                -----<br>
+                                Separate Website and Exchange Databases<br>
+                            </div>
+                        </div>
+                        <div class="tricolumn" id="tricolumn2">
+                            <div class="tricolumnheader">
+                                <h3>You</h3>
+                            </div>
+                            <div class="tricolumncontent">
+                                <img src=../static/images/bluegraph.png style=width:64px;height:64px;>
+                                <h2>Powerful</h2>
+                                4 Order Types<br>
+                                -----<br>
+                                Heavy Customization<br>
+                                -----<br>
+                                Marginal Trading<br>
+                                -----<br>
+                                Loans<br>
+                                -----<br>
+                                Trade Between Users<br>
+                            </div>
+                        </div>
+                        <div class="tricolumn" id="tricolumn3">
+                            <div class="tricolumnheader">
+                                <h3>Us</h3>
+                            </div>
+                            <div class="tricolumncontent">
+                                <img src=../static/images/blueperson.png style=width:64px;height:64px;>
+                                <h2>Responsive</h2>
+                                Petition System<br>
+                                -----<br>
+                                Fast-Response Tickets<br>
+                                -----<br>
+                                Public To-Do List<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tutorialblock">
+                        <div id="tutorialblockheader">
+                            <h3>What is Bitcoin?</h3>
+                        </div>
+                        <div class="tutorialbar">
+                            <div class="tutorialbutton" id="tutorial1">
+                                What is Bitcoin?
+                            </div>
+                            <div class="tutorialbutton" id="tutorial2">
+                                How does it work?
+                            </div>
+                            <div class="tutorialbutton" id="tutorial3">
+                                Why use it?
+                            </div>
+                            <div class="tutorialbutton" id="tutorial4">
+                                Why use us?
+                            </div>
+                        </div>
+                        <div id="tutorialcontent">
+                            <h1>A Financial Transformation</h1>
+                            <p> Bitcoin was the first cryptocurrency; that is, a digitally stored currency. 
+                            It's stored on computers, like any other piece of data, and can be transferred 
+                            anywhere in the world for less fees than a credit card. It's based on a protocol called the "Blockchain," which is 
+                            a registry of all transactions ever conducted. This enables Bitcoin, and 
+                            its other cryptocurrency children, to be a safer, faster, and more reliable way to 
+                            pay and store value. </p>
+                        </div>
+                    </div>
+                    <div id="orderbook">
+                        <div id="leftbasicorderswrapper">
+                            <div id="leftbasicordersheader">
+                                <h3>Top Buy Orders</h3>
+                            </div>
+                            <table class="basicorders" id="leftbasicorders">
+                              <tr>
+                                <th>Order</th>
+                                <th>Type</th>
+                                <th>Price</th> 
+                                <th>Volume</th>
+                              </tr>
+                              {% for order in buy_order_list %}
+                              <tr>
+                                <td>{{ order.ordernumber.idnumber}}</td>
+                                <td>{{ order.type }}</td>
+                                <td>{{ order.price }}</td> 
+                                <td>{{ order.volume}}</td>
+                              </tr>
+                              {% empty %}
+                              <tr>
+                                <td>No Orders</td>
+                                <td>-</td> 
+                                <td>-</td>
+                                <td>-</td>
+                              </tr>
+                              {% endfor %}
+                            </table>
+                        </div>
+                        <div id="rightbasicorderswrapper">
+                            <div id="rightbasicordersheader">
+                                <h3>Top Sell Orders</h3>
+                            </div>
+                            <table class="basicorders" id="rightbasicorders">
+                              <tr>
+                                <th>Order</th>
+                                <th>Type</th>
+                                <th>Price</th> 
+                                <th>Volume</th>
+                              </tr>
+                              {% for order in sell_order_list %}
+                              <tr>
+                                <td>{{ order.ordernumber.idnumber}}</td>
+                                <td>{{ order.type }}</td>
+                                <td>{{ order.price }}</td> 
+                                <td>{{ order.volume}}</td>
+                              </tr>
+                              {% empty %}
+                              <tr>
+                                <td>No Orders</td>
+                                <td>-</td> 
+                                <td>-</td>
+                                <td>-</td>
+                              </tr>
+                              {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footercolumn">
+                    <h2>Social</h2>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Google+</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Legal</h2>
+                    <li>License</li>
+                    <li>Terms and Conditions</li>
+                    <li>Copyright</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Help</h2>
+                    <li>FAQ</li>
+                    <li>Submit A Ticket</li>
+                    <li>Address</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>API</h2>
+                    <li>Download</li>
+                    <li>Documentation</li>
+                    <li>Help Improve It</li>
+                </div>
+                <div id="footerlanguages">
+                    <li>English</li>
+                    <li>Deutsch</li>
+                    <li>ру́сский</li>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

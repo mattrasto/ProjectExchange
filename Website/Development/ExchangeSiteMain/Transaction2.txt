@@ -1,0 +1,34 @@
+------------------------------
+Transaction Details:
+
+Transaction Number: 2
+Transaction Date: 5/16/2016
+Transaction Time: 15:18:59
+Transaction Price: 693.54
+Transaction Volume: 0.07
+Transaction Total: 48.5478
+Spread Profit: 0.0
+Trading Fee Profit: 0.485478
+Total Profit: 0.485478
+
+Buy Order Number: 61
+Buy Order Account: Intern
+Buy Order Price: 693.54
+Buy Order Volume: 2.0
+Buy Order Trading Fee Rate: 0.005
+Buy Order Adjusted Volume: 0.06965
+Buy Order Type: Instant
+Buy Order Completion: Full
+
+Sell Order Number: 43
+Sell Order Account: Username1
+Sell Order Price: 693.54
+Sell Order Trading Fee Rate: 0.005
+Sell Order Adjusted Price: 690.0723
+Sell Order Volume: 1.46
+Sell Order Type: Conditional
+Sell Order Completion: Partial
+
+Intern: +$48.5478 and -0.06965 BTC
+Username1: -$48.305061 and +0.07 BTC
+------------------------------

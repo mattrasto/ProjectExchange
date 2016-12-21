@@ -1,0 +1,165 @@
+{% extends "base_active.html" %}
+
+{% block title %}BitSomething - Trade{% endblock %}
+
+{% block static %}
+<link type="text/css" rel="stylesheet" href="/static/TradingTerminal2.css"/>
+<script src="/static/scripts/tradingterminalorderselect.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+
+<h1 style="color: #FF615F;">Notice: Instant Orders may be temporarily inaccurate</h1>
+{{ form.errors }}
+
+<div id="orderblock">
+    <div id="orderblockheader">
+        <h3>Buy Or Sell</h3>
+    </div>
+    <div class="orderbar">
+        <div class="orderbutton" id="instantorder">
+            Instant Order
+        </div>
+        <div class="orderbutton" id="liquidorder">
+            Liquid Order
+        </div>
+        <div class="orderbutton" id="limitorder">
+            Limit Order
+        </div>
+        <div class="orderbutton" id="conditionalorder">
+            Conditional Order
+        </div>
+    </div>
+    <div id="ordercontent">
+        <div id="ordercontentleft">
+            <form method="post">
+                {% csrf_token %}
+                <!-- DO NOT TAMPER WITH; ORDER WILL NOT SUBMIT -->
+                <!-- Values are checked server-side and scripts are escaped -->
+                {{ form.order_type }}
+                {{ form.buy_order_constraint }}
+                <input type="hidden" value="buy_form">
+                <h2>Buy</h2><br>
+                <div class="checkboxes">
+                    <input type="radio" id="pricecheckbox1" name="checkbox"/>
+                    <label for="pricecheckbox1"><span>Price</span></label>
+                    <input type="radio" id="volumecheckbox1" name="checkbox"/>
+                    <label for="volumecheckbox1"><span>Volume</span></label>
+                </div>
+                <div class="ordercontentprice1">
+                    <span class="pricespan">Desired Total</span>
+                    {{ form.price }}
+                </div>
+                <div class="ordercontentvolume1">
+                    <span class="volumespan">Desired Volume</span>
+                    {{ form.volume }}
+                </div>
+                <div class="ordercontentcondition">
+                    <span>Condition to Activate</span>
+                    {{ form.condition }}
+                </div>
+                <div class="ordercontentconditionvalue">
+                    <span>Value of Condition</span>
+                    {{ form.condition_value }}
+                </div>
+                <input name="buy_form" class="createorderbutton" type="submit" value="Place Instant Order">
+                <br><a href="/orderbook/">What is <span class="ordertype">an Instant Order</span>?</a>
+            </form>
+        </div>
+        <div id="ordercontentright">
+            <form name="sell_form" method="post">
+                {% csrf_token %}
+                <!-- DO NOT TAMPER WITH; ORDER WILL NOT SUBMIT -->
+                <!-- Values are checked server-side and scripts are escaped -->
+                {{ form.order_type }}
+                {{ form.sell_order_constraint }}
+                <input type="hidden" value="sell_form">
+                <h2>Sell</h2><br>
+                <div class="checkboxes">
+                    <input type="radio" id="pricecheckbox2" name="checkbox"/>
+                    <label for="pricecheckbox2"><span>Price</span></label>
+                    <input type="radio" id="volumecheckbox2" name="checkbox"/>
+                    <label for="volumecheckbox2"><span>Volume</span></label>
+                </div>
+                <div class="ordercontentprice2">
+                    <span class="pricespan">Desired Total</span>
+                    {{ form.price }}
+                </div>
+                <div class="ordercontentvolume2">
+                    <span class="volumespan">Desired Volume</span>
+                    {{ form.volume }}
+                </div>
+                <div class="ordercontentcondition">
+                    <span>Condition to Activate</span>
+                    {{ form.condition }}
+                </div>
+                <div class="ordercontentconditionvalue">
+                    <span>Value of Condition</span>
+                    {{ form.condition_value }}
+                </div>
+                <input name="sell_form" class="createorderbutton" type="submit" value="Place Instant Order">
+                <br><a href="/orderbook/">What is <span class="ordertype">an Instant Order</span>?</a>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="orderbook">
+    <div id="leftbasicorderswrapper">
+        <div id="leftbasicordersheader">
+            <h3>Top Buy Orders</h3>
+        </div>
+        <table class="basicorders" id="leftbasicorders">
+          <tr>
+            <th>Order</th>
+            <th>Type</th>
+            <th>Price</th> 
+            <th>Volume</th>
+          </tr>
+          {% for order in buy_order_list %}
+          <tr>
+            <td>{{ order.ordernumber.idnumber}}</td>
+            <td>{{ order.type }}</td>
+            <td>{{ order.price }}</td> 
+            <td>{{ order.volume}}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>No Orders</td>
+            <td>-</td> 
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+    <div id="rightbasicorderswrapper">
+        <div id="rightbasicordersheader">
+            <h3>Top Sell Orders</h3>
+        </div>
+        <table class="basicorders" id="rightbasicorders">
+          <tr>
+            <th>Order</th>
+            <th>Type</th>
+            <th>Price</th> 
+            <th>Volume</th>
+          </tr>
+          {% for order in sell_order_list %}
+          <tr>
+            <td>{{ order.ordernumber.idnumber}}</td>
+            <td>{{ order.type }}</td>
+            <td>{{ order.price }}</td> 
+            <td>{{ order.volume}}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>No Orders</td>
+            <td>-</td> 
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

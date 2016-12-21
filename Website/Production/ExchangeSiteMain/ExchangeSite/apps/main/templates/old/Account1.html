@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>BitSomething</title>
+        <link rel="shortcut icon" href="/static/images/favicon.ico">
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="/static/Account1.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/static/scripts/lockheader.js" type="text/javascript"></script>
+        <script src="/static/scripts/accounttopicselect.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            {% block header %}
+            <div id="header">
+                <!--Header Bar (Top) - "Stats" on PD--> 
+                <div class="center">
+                    <div class="statdescription" id="statdescription1">
+                        <p>Bid</p>
+                    </div>
+                    <div class="statvalue" id="statvalue1">
+                        <p>{{ bid_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription2">
+                        <p>Latest</p>
+                    </div>
+                    <div class="statvalue" id="statvalue2">
+                        <p>{{ latest_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription3">     
+                        <p>Ask</p>
+                    </div>
+                    <div class="statvalue" id="statvalue3">
+                        <p>{{ ask_price }}</p>
+                    </div>
+                    <div id="logo">
+                        <!-- <img src=../static/images/graylogosmall.png style=width:128px;height:40px;> -->
+                        <a href="/active/">BitSomething</a>
+                    </div>
+                    <div class="statdescription" id="statdescription5">
+                        <ul>
+                            <li id="control"><a class="headerlink" href="/active/account/">{{ user.username }}</a>
+                                <ul id="controlinner">
+                                    <a class="controllink" href="/active/account/"><li>Orders</li></a>
+                                    <a class="controllink" href="/active/account/"><li>MTC's</li></a>
+                                    <a class="controllink" href="/active/account/"><li>Loans</li></a>
+                                    <a class="controllink" href="/active/account/"><li>Private Trades</li></a>
+                                    <a class="controllink" href="/active/logout/"><li>Logout</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="lockbuttonwrapper">
+                    <input id="lockbutton" type="button" onclick="lock()" value="Unlock">
+                </div>
+            </div>
+            <div id="centerwrapper">
+                <!--Menu Bar (Middle) - "Banner" on PD-->
+                <div id="menubar">
+                   <form name="input" action="/active/" method="get">
+                        <input class="menubutton" id="firstmenubutton" type="submit" value="Home">
+                    </form>
+                    <form name="input" action="/active/trading/" method="get">
+                        <input class="menubutton" type="submit" value="Trade">
+                    </form>
+                    <form name="input" action="/active/orderbook/" method="get">
+                        <input class="menubutton" id="middlemenubutton" type="submit" value="Orders">
+                    </form>
+                    <form name="input" action="/active/account/" method="get">
+                        <input class="menubutton" type="submit" value="Account">
+                    </form>
+                    <form name="input" action="/active/about/" method="get">
+                        <input class="menubutton" id="lastmenubutton" type="submit" value="About">
+                    </form>
+                </div>
+                {% endblock %}
+                <div id="underbody">
+                    <div id="underbodycenter">
+                        <div id="aboutblock">
+                            <div id="aboutblockheader">
+                                <h3>Account Control Panel</h3>
+                            </div>
+                            <div id="aboutblocknavigation">
+                                <ul>
+                                    <li>
+                                        <input class="navigationselect" id="navigationselect1" type="button" value="Overview" style="color: #7DABFF;">
+                                        <ul class="innerlist">
+                                            <li><input class="navigationselectinner1" type="button" value="Balances"></li>
+                                            <li><input class="navigationselectinner1" type="button" value="Open Basic Orders"></li>
+                                            <li><input class="navigationselectinner1" type="button" value="Current MTC's"></li>
+                                            <li><input class="navigationselectinner1" type="button" value="Current Loans"></li>
+                                            <li><input class="navigationselectinner1" type="button" value="Open Private Trades"></li>
+                                            <li><input class="navigationselectinner1" type="button" value="History"></li>
+                                            <li><input class="navigationselectinner1" type="button" value="Statistics"></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input class="navigationselect" id="navigationselect2" type="button" value="Actions">
+                                        <ul class="innerlist">
+                                            <li><input class="navigationselectinner2" type="button" value="Make a Deposit"></li>
+                                            <li><input class="navigationselectinner2" type="button" value="Make a Withdrawal"></li>
+                                            <li><input class="navigationselectinner2" type="button" value="Bank Information"></li>
+                                            <li><input class="navigationselectinner2" type="button" value="Open a Support Ticket"></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input class="navigationselect" id="navigationselect3" type="button" value="Settings">
+                                        <ul class="innerlist">
+                                            <li><input class="navigationselectinner3" type="button" value="Preferences"></li>
+                                            <li><input class="navigationselectinner3" type="button" value="Update Account"></li>
+                                            <li><input class="navigationselectinner3" type="button" value="Default Behaviors"></li>
+                                        </ul>
+                                    </li>
+                                    <li><input class="navigationselect" id="navigationselect4" type="button" value="Public Profile"></li>
+                                </ul>
+                            </div>
+                            <div class="aboutblockcontent" id="content1">
+                                <h2>Overview</h2>
+                                <p>[Insert general information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content2">
+                                <h2>Balances</h2>
+                                <p>[Insert balances here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content3">
+                                <h2>Basic Orders</h2>
+                                {% for order in order_list %}
+                                <div class="orderticket">
+                                    <h4>Order {{ order.0 }}:</h4>
+                                    <ul>
+                                        <li><b>Type:</b> {{ order.4 }}</li>
+                                        <li><b>Action:</b> {{ order.5 }}</li>
+                                        <li><b>Price:</b> {{ order.2 }}</li>
+                                        <li><b>Volume:</b> {{ order.3 }}</li>
+                                    </ul>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="aboutblockcontent" id="content4">
+                                <h2>MTC's</h2>
+                                <p>[Insert MTC information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content5">
+                                <h2>Loans</h2>
+                                <p>[Insert loan information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content6">
+                                <h2>Private Trades</h2>
+                                <p>[Insert private trade information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content7">
+                                <h2>History</h2>
+                                <p>[Insert user history here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content8">
+                                <h2>Statistics</h2>
+                                <p>[Insert user statistics here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content9">
+                                <h2>Actions</h2>
+                                <p>[Insert general actions here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content10">
+                                <h2>Deposits</h2>
+                                <p>[Insert deposit information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content11">
+                                <h2>Withdrawals</h2>
+                                <p>[Insert withdrawal information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content12">
+                                <h2>Bank Information</h2>
+                                <p>[Insert bank information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content13">
+                                <h2>Support</h2>
+                                <p>[Insert support information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content14">
+                                <h2>Settings</h2>
+                                <p>[Insert general settings here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content15">
+                                <h2>Preferences</h2>
+                                <p>[Insert preferences here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content16">
+                                <h2>Account</h2>
+                                <p>[Insert account information here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content17">
+                                <h2>Defaults</h2>
+                                <p>[Insert default behaviors here]</p>
+                            </div>
+                            <div class="aboutblockcontent" id="content18">
+                                <h2>Public Profile</h2>
+                                <p>[Insert public profile here]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footercolumn">
+                    <h2>Social</h2>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Google+</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Legal</h2>
+                    <li>License</li>
+                    <li>Terms and Conditions</li>
+                    <li>Copyright</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Help</h2>
+                    <li>FAQ</li>
+                    <li>Submit A Ticket</li>
+                    <li>Address</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>API</h2>
+                    <li>Download</li>
+                    <li>Documentation</li>
+                    <li>Help Improve It</li>
+                </div>
+                <div id="footerlanguages">
+                    <li>English</li>
+                    <li>Deutsch</li>
+                    <li>ру́сский</li>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

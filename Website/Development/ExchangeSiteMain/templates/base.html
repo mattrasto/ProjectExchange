@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- TITLE BLOCK -->
+        <title>{% block title %}BitSomething{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
+        <meta charset="utf-8">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}scripts/lockheader.js" type="text/javascript"></script>
+        
+        <!-- START STATIC BLOCK -->
+        {% block static %}
+        
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}GuestHomepage7.css"/>
+        
+        {% endblock %}
+        <!-- END STATIC BLOCK -->
+    </head>
+    <body>
+        <div id="wrapper">
+            
+            <!-- START HEADER BLOCK -->
+            {% block header %}
+            
+            <div id="header">
+                <!--Header Bar (Top) - "Stats" on PD--> 
+                <div class="center">
+                    <div class="statdescription" id="statdescription1">
+                        <p>Bid</p>
+                    </div>
+                    <div class="statvalue" id="statvalue1">
+                        <p>{{ bid_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription2">
+                        <p>Latest</p>
+                    </div>
+                    <div class="statvalue" id="statvalue2">
+                        <p>{{ latest_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription3">     
+                        <p>Ask</p>
+                    </div>
+                    <div class="statvalue" id="statvalue3">
+                        <p>{{ ask_price }}</p>
+                    </div>
+                    <div id="logo">
+                        <!-- <img src=../static/images/graylogosmall.png style=width:128px;height:40px;> -->
+                        <a href="/">BitSomething</a>
+                    </div>
+                    <div class="statdescription" id="statdescription4">
+                        <a class="headerlink" href="/register/">Register</a>
+                    </div>
+                    <div class="statdescription" id="statdescription5">
+                        <a class="headerlink" href="/login/">Login</a>
+                    </div>
+                </div>
+                <div id="lockbuttonwrapper">
+                    <input id="lockbutton" type="button" onclick="lock()" value="Unlock">
+                </div>
+            </div>
+            
+            {% endblock %}
+            <!-- END HEADER BLOCK -->
+            
+            <div id="centerwrapper">
+                
+                <!-- START MENU BLOCK -->
+                {% block menu %}
+                
+                <!--Menu Bar (Middle) - "Banner" on PD-->
+                <div id="menubar">
+                   <form name="input" action="/" method="get">
+                        <input class="menubutton" id="firstmenubutton" type="submit" value="Home">
+                    </form>
+                    <form name="input" action="/login/" method="get">
+                        <input class="menubutton" type="submit" value="Trade">
+                    </form>
+                    <form name="input" action="/login/" method="get">
+                        <input class="menubutton" id="middlemenubutton" type="submit" value="Orders">
+                    </form>
+                    <form name="input" action="/login/" method="get">
+                        <input class="menubutton" type="submit" value="Account">
+                    </form>
+                    <form name="input" action="/about/" method="get">
+                        <input class="menubutton" id="lastmenubutton" type="submit" value="About">
+                    </form>
+                </div>
+                
+                {% endblock %}
+                <!-- END MENU BLOCK -->
+                
+                <div id="underbody">
+                    
+                    <!-- START CALL BLOCK -->
+                    {% block call %}
+                    
+                    {% endblock %}
+                    <!-- END CALL BLOCK -->
+                    
+                    <div id="underbodycenter">
+                        
+                        <!-- START CONTENT BLOCK -->
+                        {% block content %}
+                        
+                        {% endblock %}
+                        <!-- END CONTENT BLOCK -->
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- START FOOTER BLOCK -->
+            {% block footer %}
+            
+            <div class="footer">
+                <div class="footercolumn">
+                    <h2>Social</h2>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Google+</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Legal</h2>
+                    <li>License</li>
+                    <li>Terms and Conditions</li>
+                    <li>Copyright</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Help</h2>
+                    <li>FAQ</li>
+                    <li>Submit A Ticket</li>
+                    <li>Address</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>API</h2>
+                    <li>Download</li>
+                    <li>Documentation</li>
+                    <li>Help Improve It</li>
+                </div>
+                <div id="footerlanguages">
+                    <li>English</li>
+                    <li>Deutsch</li>
+                    <li>ру́сский</li>
+                </div>
+            </div>
+            
+            {% endblock %}
+            <!-- END FOOTER BLOCK -->
+            
+        </div>
+    </body>
+</html>

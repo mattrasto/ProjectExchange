@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}BitSomething - Login Failed{% endblock %}
+
+{% block static %}
+
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}LoginFail2.css"/>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="messageblock">
+    <div id="messageblockheader">
+        <h3>Login Failed</h3>
+    </div>
+    <div id="messageblockcontent">
+        <p>Login attempt failed.</p>
+        <p>Ensure your username and password match. All fields are case sensitive and your username will be capitalized if it starts with a letter.</p>
+        <br><p><a href="/login/">Try again</a></p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base_active.html" %}
+
+{% block title %}BitSomething - Logout{% endblock %}
+
+{% block static %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}LogoutSuccess2.css"/>
+{% endblock %}
+
+{% block content %}
+
+<div id="messageblock">
+    <div id="messageblockheader">
+        <h3>Confirm Logout</h3>
+    </div>
+    <div id="messageblockcontent">
+        <p>Are you sure you want to log out?</p>
+        <input id="logoutbutton" type="button" value="logout">
+    </div>
+</div>
+
+{% endblock %}

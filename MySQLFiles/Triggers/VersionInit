@@ -1,0 +1,8 @@
+USE `exchange`;
+DELIMITER $$
+CREATE TRIGGER `VersionInit` BEFORE INSERT ON `BasicOrderLog` FOR EACH ROW
+	IF ((SELECT MAX(Version) FROM BasicOrderLog WHERE OrderNumber = NEW.OrderNumber) > 0) THEN
+		SET @MaxVersion = (SELECT MAX(Version) FROM BasicOrderLog WHERE OrderNumber = NEW.OrderNumber);
+		SET Version = @MaxVersion+1;
+	END IF;
+END

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}BitSomething - Login{% endblock %}
+
+{% block static %}
+
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}LoginDisabled2.css"/>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="messageblock">
+    <div id="messageblockheader">
+        <h3>Account Disabled</h3>
+    </div>
+    <div id="messageblockcontent">
+        <p>Your login was successful, but your account is locked. Please consider opening a support ticket. Here are some possible reasons why your account has been locked:</p>
+        <ul>
+            <li>Your account's security was compromised</li>
+            <li>Your trading activites were suspicious</li>
+            <li>Multiple suspicious login attempts were made</li>
+            <li>You violated one of BitSomething's rules</li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

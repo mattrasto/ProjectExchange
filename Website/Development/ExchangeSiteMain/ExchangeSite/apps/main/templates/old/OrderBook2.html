@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>BitSomething</title>
+        <link rel="shortcut icon" href="/static/images/favicon.ico">
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="/static/OrderBook2.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/static/scripts/lockheader.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <!--Header Bar (Top) - "Stats" on PD--> 
+                <div class="center">
+                    <div class="statdescription" id="statdescription1">
+                        <p>Bid</p>
+                    </div>
+                    <div class="statvalue" id="statvalue1">
+                        <p>{{ bid_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription2">
+                        <p>Latest</p>
+                    </div>
+                    <div class="statvalue" id="statvalue2">
+                        <p>{{ latest_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription3">     
+                        <p>Ask</p>
+                    </div>
+                    <div class="statvalue" id="statvalue3">
+                        <p>{{ ask_price }}</p>
+                    </div>
+                    <div id="logo">
+                        <!-- <img src=../static/images/graylogosmall.png style=width:128px;height:40px;> -->
+                        <a href="/active/">BitSomething</a>
+                    </div>
+                    <div class="statdescription" id="statdescription5">
+                        <ul>
+                            <li id="control"><a class="headerlink" href="/active/account/">{{ user.username }}</a>
+                                <ul id="controlinner">
+                                    <a class="controllink" href="/active/account/"><li>Orders</li></a>
+                                    <a class="controllink" href="/active/account/"><li>MTC's</li></a>
+                                    <a class="controllink" href="/active/account/"><li>Loans</li></a>
+                                    <a class="controllink" href="/active/account/"><li>Private Trades</li></a>
+                                    <a class="controllink" href="/active/logout/"><li>Logout</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="lockbuttonwrapper">
+                    <input id="lockbutton" type="button" onclick="lock()" value="Unlock">
+                </div>
+            </div>
+            <div id="centerwrapper">
+                <!--Menu Bar (Middle) - "Banner" on PD-->
+                <div id="menubar">
+                   <form name="input" action="/active/" method="get">
+                        <input class="menubutton" id="firstmenubutton" type="submit" value="Home">
+                    </form>
+                    <form name="input" action="/active/trading/" method="get">
+                        <input class="menubutton" type="submit" value="Trade">
+                    </form>
+                    <form name="input" action="/active/orderbook/" method="get">
+                        <input class="menubutton" id="middlemenubutton" type="submit" value="Orders">
+                    </form>
+                    <form name="input" action="/active/account/" method="get">
+                        <input class="menubutton" type="submit" value="Account">
+                    </form>
+                    <form name="input" action="/active/about/" method="get">
+                        <input class="menubutton" id="lastmenubutton" type="submit" value="About">
+                    </form>
+                </div>
+                <div id="underbody">
+                    <div id="underbodycenter">
+                        <div id="orderbook">
+                            <div id="leftbasicorderswrapper">
+                                <div id="leftbasicordersheader">
+                                    <h3>Buy Book</h3>
+                                </div>
+                                <table class="basicorders" id="leftbasicorders">
+                                  <tr>
+                                    <th>Order</th>
+                                    <th>Type</th>
+                                    <th>Price</th> 
+                                    <th>Volume</th>
+                                  </tr>
+                                  {% for order in buy_order_list %}
+                                  <tr>
+                                    <td>{{ order.ordernumber.idnumber}}</td>
+                                    <td>{{ order.type }}</td>
+                                    <td>{{ order.price }}</td> 
+                                    <td>{{ order.volume}}</td>
+                                  </tr>
+                                  {% empty %}
+                                  <tr>
+                                    <td>No Orders</td>
+                                    <td>-</td> 
+                                    <td>-</td>
+                                    <td>-</td>
+                                  </tr>
+                                  {% endfor %}
+                                </table>
+                            </div>
+                            <div id="rightbasicorderswrapper">
+                                <div id="rightbasicordersheader">
+                                    <h3>Sell Book</h3>
+                                </div>
+                                <table class="basicorders" id="rightbasicorders">
+                                  <tr>
+                                    <th>Order</th>
+                                    <th>Type</th>
+                                    <th>Price</th> 
+                                    <th>Volume</th>
+                                  </tr>
+                                  {% for order in sell_order_list %}
+                                  <tr>
+                                    <td>{{ order.ordernumber.idnumber}}</td>
+                                    <td>{{ order.type }}</td>
+                                    <td>{{ order.price }}</td> 
+                                    <td>{{ order.volume}}</td>
+                                  </tr>
+                                  {% empty %}
+                                  <tr>
+                                    <td>No Orders</td>
+                                    <td>-</td> 
+                                    <td>-</td>
+                                    <td>-</td>
+                                  </tr>
+                                  {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footercolumn">
+                    <h2>Social</h2>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Google+</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Legal</h2>
+                    <li>License</li>
+                    <li>Terms and Conditions</li>
+                    <li>Copyright</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Help</h2>
+                    <li>FAQ</li>
+                    <li>Submit A Ticket</li>
+                    <li>Address</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>API</h2>
+                    <li>Download</li>
+                    <li>Documentation</li>
+                    <li>Help Improve It</li>
+                </div>
+                <div id="footerlanguages">
+                    <li>English</li>
+                    <li>Deutsch</li>
+                    <li>ру́сский</li>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

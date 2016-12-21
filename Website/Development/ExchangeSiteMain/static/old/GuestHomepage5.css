@@ -1,0 +1,708 @@
+/*---
+
+Colors:
+
+White: #FFFFFF
+
+Black: #000000
+
+Grays:
+
+Non-White Gray: #F2F2F2
+Very Light Gray: #EDEDED
+Medium Light Gray: #DEDEDE
+Light Gray: #C3C3C3
+Middle Gray: #7C7C7C
+Dark Gray: #3D3D3D
+Very Dark Gray: #191919
+
+Blues:
+
+Non-White Blue: #E9F0F5
+Sky Blue: #43B9BF
+Mild Blue: #61ABFF
+Medium Blue: #7DABFF
+Light Blue: #9FDCFF
+
+Greens:
+
+Light Green: #6EFF81
+Light Mint Green: #9CF3CC
+Non-White Green: #DAFFDA
+Medium Green: #0DA830
+
+Purples:
+
+Light Purple: #C89EFF
+Lavender: #C291E5
+
+Yellows:
+
+Yellow: #FFFF49
+
+Reds:
+
+Bright Red: #FF0D1D
+Light Red: #FF2F35
+Salmon: #FF615F
+
+------------------------------
+
+Fonts:
+
+Roboto
+
+*/
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: "Roboto Normal 400", "Roboto", sans-serif;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    padding: 0px;
+    color: #3D3D3D;
+    background-color: #F2F2F2;
+}
+
+
+
+/* General Formatting */
+
+
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+li {
+	list-style-type: solid circle;
+	margin: 5px;
+	line-height: 20px;
+}
+
+.center {
+	width: 80%;
+	height: 100%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+
+
+/* Header */
+
+
+
+.header {
+	height: 40px;
+	line-height: 40px;
+    width: 100%;
+    background-color: #3D3D3D;
+    margin: 0px;
+    text-align: center;
+    position: relative;
+    font-size: 18px;
+    color: #909090;
+}
+
+.statdescription {
+	height: 100%;
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+	margin-right: 1%;
+}
+
+.statdescription p {
+	margin: 0px;
+}
+
+.statvalue {
+	height: 100%;
+	float: left;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	margin-right: 5%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.statvalue p {
+	margin: 0px;
+	color: #7DABFF;
+}
+
+.statvalue:hover {
+	cursor: pointer;
+	border-bottom: 4px solid;
+	border-color: #7DABFF;
+}
+
+#statdescription4 {
+	text-align: right;
+	float: right;
+	margin-right: 0px;
+	margin-left: 5%;
+}
+
+#statdescription5 {
+	text-align: right;
+	float: right;
+	margin-right: 0px;
+}
+
+.headerlink {
+	color: inherit;
+	float: right;
+	margin-right: 5%;
+	/*
+	border-left: solid;
+	border-right: solid;
+	padding-left: 5px;
+	padding-right: 5px;
+	*/
+}
+
+.headerlink:hover {
+	color: #7DABFF;
+	text-decoration: none;
+	font-size: inherit;
+	font-weight: normal;
+}
+
+
+
+/* Banner Logo and Formatting */
+
+
+
+.banner {
+	height: 150px;
+    width: 100%;
+    background-color: #303030;
+    margin: 0px;
+    text-align: center;
+    position: relative;
+}
+
+.bannerlogo {
+	margin-top: 15px;
+	height: 120px;
+	width: 300px;
+	text-align: center;
+	float: left;
+	display: table-cell;
+	line-height: 120px;
+	vertical-align: middle;
+	border: 2px solid;
+	border-color: #7DABFF;
+	border-radius: 2px;
+	position: absolute;
+	color: #3D3D3D;
+	-moz-box-shadow: 0px 0px 5px 2px #000000;
+	-webkit-box-shadow: 0px 0px 5px 2px #000000;
+	box-shadow: 0px 0px 5px 2px #000000;
+}
+
+.bannerlogo:hover {
+	border-color: #3D3D3D;
+}
+
+.bannerspace {
+	height: 120px;
+	width: 60%;
+	float: right;
+	margin-top: 15px;
+}
+
+
+
+/* Navigation Menu */
+
+
+
+.menubar {
+	height: 40px;
+	width: 100%;
+	display: inline-block;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-right: 0px;
+	float: right;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.menubutton {
+	float: left;
+	line-height: 25px;
+	font-size: 20px;
+	font-weight: bold;
+	height: 100%;
+	width: 18.4%;
+	color: #3D3D3D;
+	border: solid 2px;
+	background-color: #F2F2F2;
+	border-color: #7DABFF;
+	border-radius: 2px;
+	margin-left: 2%;
+	cursor: pointer;
+	outline: none;
+	-moz-box-shadow: 0px 0px 5px 1px #000000;
+	-webkit-box-shadow: 0px 0px 5px 1px #000000;
+	box-shadow: 0px 0px 5px 1px #000000;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#firstmenubutton {
+	margin-left: 0px;
+}
+
+#lastmenubutton {
+	margin-right: 0px;
+}
+
+.menubutton:hover {
+	border-color: #3D3D3D;
+	-moz-box-shadow: 0px 0px 5px 2px #000000;
+	-webkit-box-shadow: 0px 0px 5px 2px #000000;
+	box-shadow: 0px 0px 5px 2px #000000;
+}
+
+.menubutton:active {
+	font-size: 18px;
+}
+
+
+
+/* Content Body Formatting */
+
+
+
+#underbody {
+	height: 100%;
+	width: 100%;
+	background-color: #303030;
+	border-color: #3D3D3D;
+	border-top: none;
+	border-bottom: none;
+	padding-top: 30px;
+	color: #3D3D3D;
+}
+
+
+
+/* Content Part 1 - Call To Arms */
+
+
+
+#callblock {
+	width: 100%;
+	border: 2px solid;
+	/* border-color: #3D3D3D; */
+	border-color: #7DABFF;
+	border-radius: 2px;
+	padding-bottom: 20px;
+	background-color: #F2F2F2;
+	-moz-box-shadow: 0px 0px 5px 2px #000000;
+	-webkit-box-shadow: 0px 0px 5px 2px #000000;
+	box-shadow: 0px 0px 5px 2px #000000;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#callblockheader {
+	background-color: #7DABFF;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 25px;
+}
+
+#callblockheader h3 {
+	margin-top: 0px;
+}
+
+#callblockcontent {
+	
+	
+}
+
+#callbutton {
+	line-height: 25px;
+	font-size: 20px;
+	font-weight: bold;
+	height: 100%;
+	width: 18%;
+	color: #7DABFF;
+	border: solid 2px;
+	background-color: #F2F2F2;
+	border-color: #7DABFF;
+	border-radius: 2px;
+	margin: auto;
+	cursor: pointer;
+	outline: none;
+}
+
+#callbutton:hover {
+	color: #3D3D3D;
+	border-color: #3D3D3D;
+	-moz-box-shadow: 0px 0px 5px 2px #000000;
+	-webkit-box-shadow: 0px 0px 5px 2px #000000;
+	box-shadow: 0px 0px 5px 2px #000000;
+}
+
+#callbutton:active {
+	font-size: 18px;
+}
+
+
+
+/* Content Part 2 - Features */
+
+
+
+#featuresblock {
+	width: 100%;
+}
+
+.tricolumn {
+	margin-top: 30px;
+	padding-top: 0px;
+	display: inline-block;
+	width: 30%;
+	height: 500px;
+	background-color: #F2F2F2;
+	border: solid 2px;
+	/* border-color: #3D3D3D; */
+	border-color: #7DABFF;
+	border-radius: 2px;
+	text-align: center;
+	-moz-box-shadow: 0px 0px 5px 2px #000000;
+	-webkit-box-shadow: 0px 0px 5px 2px #000000;
+	box-shadow: 0px 0px 5px 2px #000000;
+}
+
+.tricolumnheader {
+	background-color: #7DABFF;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 25px;
+}
+
+.tricolumnheader h3 {
+	margin-top: 0px;
+}
+
+.tricolumncontent {
+	padding-left: 5px;
+	padding-right: 5px;
+	line-height: 25px;
+}
+
+#tricolumn1 {
+	float: left;
+	margin-right: 2%;
+}
+
+tricolumn2 {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+#tricolumn3 {
+	float: right;
+	margin-left: 2%;
+}
+
+.tricolumn img {
+	display: block;
+	margin: auto;
+}
+
+.tricolumn h2 {
+	text-align: center;
+	color: #3D3D3D;
+}
+
+
+
+/* Content Part 3 - Bitcoin Tutorial */
+
+
+
+#tutorialblock {
+	width: 100%;
+	min-height: 500px;
+	overflow: auto;
+	margin-top: 30px;
+	border: 2px solid;
+	border-color: #7DABFF;
+	border-radius: 2px;
+	background-color: #F2F2F2;
+	margin-bottom: 30px;
+	-moz-box-shadow: 0px 0px 5px 2px #000000;
+	-webkit-box-shadow: 0px 0px 5px 2px #000000;
+	box-shadow: 0px 0px 5px 2px #000000;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#tutorialblockheader {
+	width: 100%;
+	background-color: #7DABFF;
+	line-height: 40px;
+}
+
+#tutorialblockheader h3{
+	margin: 0px;
+}
+
+.tutorialbar {
+	width: 100%;
+	line-height: 30px;
+	height: 35px;
+}
+
+.tutorialbutton {
+	height: 35px;
+	margin: 0px;
+	width: 25%;
+	float: left;
+	display: inline-block;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	border-color: #3D3D3D;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.tutorialbutton:hover {
+	background-color: #7DABFF;
+	cursor: pointer;
+}
+
+
+/* Note: Used for extending borders around selected box (Also add "border-top: none;" and "padding-top: 2px;" to main class)
+
+.tutorialbutton:hover:not(:first-child):not(last-child) {
+	border-left: 2px solid;
+	border-right: 2px solid;
+}
+
+#tutorial1:hover {
+	border-top: none;
+	border-left: none;
+	border-right: 2px solid;
+	padding-left: 2px;
+}
+
+#tutorial4:hover {
+	border-top: none;
+	border-right: none;
+	border-left: 2px solid;
+	padding-right: 2px;
+}
+*/
+
+#tutorialcontent {
+	padding: 20px;
+	line-height: 50px;
+}
+
+
+
+/* Content Part 4 - Order Book Tables */
+
+
+
+#orderbook {
+	margin-top: 5px;
+	margin-bottom: 25px;
+	margin-left: -5px;
+	margin-right: -5px;
+	padding: 5px;
+	overflow: auto;
+}
+
+#leftbasicorderswrapper {
+	display: inline-block;
+	width: 48%;
+	float: left;
+	border: solid 2px;
+	border-color: #7DABFF;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 0px 5px 2px #000000;
+	-webkit-box-shadow: 0px 0px 5px 2px #000000;
+	box-shadow: 0px 0px 5px 2px #000000;
+}
+
+#leftbasicordersheader {
+	background-color: #7DABFF;
+	width: 100%;
+	line-height: 40px;
+	border-bottom: solid 2px;
+	border-color: #3D3D3D;
+}
+
+#leftbasicordersheader h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#rightbasicorderswrapper {
+	display: inline-block;
+	width: 48%;
+	float: right;
+	border: solid 2px;
+	border-color: #7DABFF;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 0px 5px 2px #000000;
+	-webkit-box-shadow: 0px 0px 5px 2px #000000;
+	box-shadow: 0px 0px 5px 2px #000000;
+}
+
+#rightbasicordersheader {
+	background-color: #7DABFF;
+	width: 100%;
+	line-height: 40px;
+	border-bottom: solid 2px;
+	border-color: #3D3D3D;
+}
+
+#rightbasicordersheader h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#orderbook table {
+	width: 100%;
+	background-color: #F2F2F2;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+#orderbook table th {
+	border-bottom: 2px solid;
+	border-color: #3D3D3D;
+	padding: 5px;
+}
+
+#orderbook table th:hover {
+	background-color: #7DABFF;
+	cursor: pointer;
+}
+
+#orderbook table td {
+	padding: 3px;
+	text-align: left;
+}
+
+#orderbook table td:first-child {
+	text-align: center;
+	padding: 0px;
+}
+
+#orderbook table tr:not(:first-child):hover {
+	background-color: #7DABFF;
+	cursor: pointer;
+}
+
+#orderbook table tr:not(:last-child) {
+	border-bottom: 2px solid;
+	border-color: #C3C3C3;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#leftbasicorders {
+	width: 40%;
+}
+
+#rightbasicorders {
+	width: 40%;
+}
+
+
+
+/* Footer */
+
+
+
+.footer {
+	background-color: #3D3D3D;
+	color: #7C7C7C;
+	position: relative;
+	height: 230px;
+	list-style-type: none;
+	font-size: 15px;
+	clear: both;
+}
+
+.footercolumn {
+	width: 24%;
+	height: 150px;
+	display: inline-block;
+}
+
+.footercolumn li:hover {
+	color: #7DABFF;
+	cursor: pointer;
+}
+
+#footerlanguages {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+
+#footerlanguages li {
+	display: inline;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#footerlanguages li:hover {
+	color: #7DABFF;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+

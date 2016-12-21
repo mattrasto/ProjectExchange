@@ -1,0 +1,599 @@
+/*---
+
+Colors:
+
+White: #FFFFFF
+
+Black: #000000
+
+Grays:
+
+Non-White Gray: #F2F2F2
+#Very Very Light Gray: #EBEBEB
+Very Light Gray: #EDEDED
+Medium Light Gray: #DEDEDE
+Light Gray: #C3C3C3
+Middle Gray: #7C7C7C
+Darkish Gray: #474747
+Dark Darkish gray: #575757
+Dark Gray: #3D3D3D
+Very Dark Gray: #191919
+
+Blues:
+
+Non-White Blue: #E9F0F5
+Sky Blue: #43B9BF
+Mild Blue: #61ABFF
+Medium Blue: #7DABFF
+Light Blue: #9FDCFF
+
+Greens:
+
+Light Green: #6EFF81
+Light Mint Green: #9CF3CC
+Non-White Green: #DAFFDA
+Medium Green: #0DA830
+
+Purples:
+
+Light Purple: #C89EFF
+Lavender: #C291E5
+
+Yellows:
+
+Yellow: #FFFF49
+
+Reds:
+
+Bright Red: #FF0D1D
+Light Red: #FF2F35
+Salmon: #FF615F
+
+------------------------------
+
+Fonts:
+
+Roboto
+
+*/
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: "Roboto Normal 400", "Roboto", sans-serif;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    padding: 0px;
+    color: #3D3D3D;
+    background-color: #7DABFF;
+}
+
+
+
+/* General Formatting */
+
+
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+li {
+	list-style-type: none;
+	margin: 5px;
+	line-height: 20px;
+}
+
+.center {
+	width: 85%;
+	height: 100%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+}
+
+#centerwrapper {
+	width: 85%;
+	height: 100%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	/*
+	Note: Adds a border around main body
+	border-right: 2px solid;
+	border-left: 2px solid;
+	border-color: #3D3D3D
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    */
+}
+
+
+
+/* Header */
+
+
+
+#header {
+	height: 40px;
+	line-height: 40px;
+    width: 100%;
+    background-color: #3D3D3D;
+    margin: 0px;
+    text-align: center;
+    font-size: 18px;
+    color: #909090;
+    border-bottom: 2px solid #303030;
+    position: static;
+    z-index: 998;
+    top: 0px;
+    left: 0px;
+}
+
+.statdescription {
+	height: 100%;
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+	margin-right: 1%;
+}
+
+.statdescription p {
+	margin: 0px;
+}
+
+.statvalue {
+	color: #7DABFF;
+	height: 100%;
+	float: left;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	margin-right: 3%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.statvalue p {
+	margin: 0px;
+}
+
+.statvalue:hover {
+	cursor: pointer;
+	text-shadow: 0px 0px 2px #7DABFF;
+}
+
+#statdescription5 {
+	text-align: right;
+	float: right;
+	margin-right: 0px;
+}
+
+#statdescription6 {
+	text-align: right;
+	float: right;
+}
+
+#statdescription7 {
+	text-align: right;
+	float: right;
+}
+
+#statvalue6 {
+	text-align: right;
+	float: right;
+}
+
+#statvalue7 {
+	text-align: right;
+	float: right;
+}
+
+#logo {
+	color: #7DABFF;
+	width: 20%;
+	margin-left: 32.5%;
+	margin-right: 32.5%;
+	position: absolute;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#logo a {
+	color: #7DABFF;
+	font-size: 30px;
+}
+
+#logo:hover {
+	text-shadow: 0px 0px 2px #7DABFF;
+}
+
+#statdescription5 > ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#control {
+	line-height: 40px;
+	color: #7DABFF;
+	float: right;
+	margin: 0px;
+}
+
+#control:hover {
+	cursor: pointer;
+}
+
+/* Fix - When #control (.statdescription ul li) is hovered over, makes child ul's display as a block */
+#control:hover > ul {
+	/* display: block; */
+	opacity: 1;
+	visibility: visible;
+}
+
+#controlinner {
+	margin-top: 42px;
+	margin-bottom: 0px;
+	width: 180px;
+	/* display: none; */
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	z-index: 999;
+	right: 7.5%;
+	text-align: center;
+	padding: 0px;
+	-moz-box-shadow: 0px 0px 10px 3px #3D3D3D;
+	-webkit-box-shadow: 0px 0px 10px 3px #3D3D3D;
+	box-shadow: 0px 0px 10px 3px #3D3D3D;
+	-webkit-transition: visibility linear .1s, opacity .3s linear .1s;
+    -moz-transition: visibility linear .1s, opacity .3s linear .1s;
+    -o-transition: visibility linear .1s, opacity .3s linear .1s;
+    transition: visibility linear .1s, opacity .3s linear .1s;
+}
+
+#controlinner:hover {
+	text-shadow: none;
+}
+
+#controlinner li {
+	margin: 0px;
+	line-height: 42px;
+	color: #7DABFF;
+	background-color: #3D3D3D;
+	border: 2px solid;
+	border-top: 0px;
+	border-color: #303030;
+}
+
+#controlinner li:hover {
+	background-color: #474747;
+	text-shadow: 0px 0px 2px #7DABFF;
+	cursor: pointer;
+}
+
+.controllink {
+	color: #7DABFF;
+	width: 180px;
+}
+
+.headerlink {
+	color: #7DABFF;
+	float: right;
+	margin-right: 5%;
+	/*
+	border-left: solid;
+	border-right: solid;
+	padding-left: 5px;
+	padding-right: 5px;
+	*/
+}
+
+.headerlink:hover {
+	text-shadow: 0px 0px 2px #7DABFF;
+}
+
+#lockbuttonwrapper {
+	float: right;
+	position: absolute;
+	left: 94%;
+	top: 0px;
+	height: 100%;
+	width: 5%;
+	outline: none;
+}
+
+#lockbuttonwrapper input {
+	background-color: #3D3D3D;
+	color: #7DABFF;
+	border: none;
+	outline: none;
+	font-size: 18px;
+}
+
+#lockbuttonwrapper input:hover {
+	text-shadow: 0px 0px 2px #7DABFF;
+	cursor: pointer;
+}
+
+
+
+/* Navigation Menu */
+
+
+
+#menubar {
+	height: 44px;
+	width: 100%;
+	margin: 0px;
+	display: inline-block;
+	padding-right: 0px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: static;
+    z-index: 999;
+    top: 42px;
+    left: 0px;
+}
+
+.menubutton {
+	display: inline-block;
+	float: left;
+	line-height: 40px;
+	font-size: 20px;
+	height: 100%;
+	width: 20%;
+	color: #7DABFF;
+	border-top: none;
+	border-bottom: solid 2px;
+	border-left: solid 1px;
+	border-right: solid 1px;
+	background-color: #575757;
+	border-color: #303030;
+	cursor: pointer;
+	outline: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#firstmenubutton {
+	border-left: none;
+}
+
+#lastmenubutton {
+	border-right: none;
+}
+
+.menubutton:hover {
+	text-shadow: 0px 0px 2px #7DABFF;
+	border-bottom-color: #7DABFF;
+	background-color: #3D3D3D;
+}
+
+.menubutton:active {
+	font-size: 18px;
+}
+
+
+
+/* Content Body Formatting */
+
+
+
+#underbody {
+	height: 100%;
+	width: 100%;
+	background-color: #EBEBEB;
+	padding-top: 30px;
+	margin-top: -5px;
+	color: #3D3D3D;
+	padding-bottom: 30px;
+}
+
+#underbodycenter {
+	width: 95%;
+	height: 100%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	min-height: 500px;
+}
+
+
+
+/* Content Part 4 - Order Book Tables */
+
+
+
+#orderbook {
+	width: 100%;
+	margin-bottom: 20px;
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-top: -10px;
+	padding: 10px;
+	overflow: auto;
+}
+
+#leftbasicorderswrapper {
+	display: inline-block;
+	width: 48%;
+	float: left;
+	border: solid 2px;
+	border-color: #7DABFF;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 0px 10px 1px #3D3D3D;
+	-webkit-box-shadow: 0px 0px 10px 1px #3D3D3D;
+	box-shadow: 0px 0px 10px 1px #3D3D3D;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#leftbasicordersheader {
+	background-color: #7DABFF;
+	width: 100%;
+	line-height: 40px;
+	border-bottom: solid 2px;
+	border-color: #3D3D3D;
+}
+
+#leftbasicordersheader h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#rightbasicorderswrapper {
+	display: inline-block;
+	width: 48%;
+	float: right;
+	border: solid 2px;
+	border-color: #7DABFF;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 0px 10px 1px #3D3D3D;
+	-webkit-box-shadow: 0px 0px 10px 1px #3D3D3D;
+	box-shadow: 0px 0px 10px 1px #3D3D3D;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#rightbasicordersheader {
+	background-color: #7DABFF;
+	width: 100%;
+	line-height: 40px;
+	border-bottom: solid 2px;
+	border-color: #3D3D3D;
+}
+
+#rightbasicordersheader h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#orderbook table {
+	width: 100.2%;
+	background-color: #F2F2F2;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+#orderbook table th {
+	border-bottom: 2px solid;
+	border-color: #3D3D3D;
+	padding: 5px;
+	text-align: left;
+}
+
+#orderbook table th:first-child {
+	text-align: center;
+}
+
+#orderbook table th:hover {
+	background-color: #7DABFF;
+	cursor: pointer;
+}
+
+#orderbook table td {
+	padding: 3px;
+	text-align: left;
+}
+
+#orderbook table td:first-child {
+	text-align: center;
+	padding: 0px;
+}
+
+#orderbook table tr:not(:first-child):hover {
+	background-color: #7DABFF;
+	cursor: pointer;
+}
+
+#orderbook table tr:not(:last-child) {
+	border-bottom: 2px solid;
+	border-color: #C3C3C3;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#leftbasicorders {
+	width: 40%;
+}
+
+#rightbasicorders {
+	width: 40%;
+}
+
+
+
+/* Footer */
+
+
+
+.footer {
+	background-color: #3D3D3D;
+	color: #7C7C7C;
+	position: relative;
+	height: 230px;
+	list-style-type: none;
+	font-size: 15px;
+	clear: both;
+	border-top: 2px solid;
+	border-color: #303030;
+}
+
+.footercolumn {
+	width: 24%;
+	height: 150px;
+	display: inline-block;
+}
+
+.footercolumn li:hover {
+	color: #7DABFF;
+	cursor: pointer;
+}
+
+#footerlanguages {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+
+#footerlanguages li {
+	display: inline;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#footerlanguages li:hover {
+	color: #7DABFF;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+

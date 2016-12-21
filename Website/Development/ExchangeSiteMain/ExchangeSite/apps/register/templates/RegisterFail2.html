@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}BitSomething - Register{% endblock %}
+
+{% block static %}
+
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}RegisterFail2.css">
+
+{% endblock %}
+
+{% block content %}
+
+<div id="messageblock">
+    <div id="messageblockheader">
+        <h3>Registration Failed</h3>
+    </div>
+    <div id="messageblockcontent">
+        <p>Registration attempt failed.</p>
+        <p>Please try again, making sure that all of your information is entered correctly. Follow the warnings in order to ensure that your data meets the requirements.</p>
+        <br><p><a href="/register/">Try again</a></p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}BitSomething - Login{% endblock %}
+
+{% block static %}
+
+<link type="text/css" rel="stylesheet" href="../static/Login4.css"/>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="loginblock">
+    <div id="formblock">
+        <div id="formblockheader">
+            <h3>Login</h3>
+        </div>
+        <div id="formblockcontent">
+            <form method="post">
+                {% csrf_token %}
+                <p>Username:</p>
+                {{ form.username }}
+                <p>Password:</p>
+                {{ form.password }}
+                <br><input id="loginsubmit" type="submit" value="Login"><br>
+                <a href="/passwordreset/">Forgot Password</a>
+                <span class="bullet">&#8226;</span>
+                <a href="/register/">Make an Account</a>
+            </form>
+        </div>
+    </div>
+    <div id="featuresblock">
+        <div id="featuresblockheader">
+            <h3>Stay Safe!</h3>
+        </div>
+        <div id="featuresblockcontent">
+            <p>We will always keep your account safe, but here are some things you can do to help:</p>
+            <ul>
+                <li>Use a strong password</li>
+                <li>NEVER give out your information</li>
+                <li>Make sure you are on the official BitSomething page before logging in</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

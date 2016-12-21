@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="../static/Register.css"/>
+        <title>Exchange Website</title>
+        <!--<script type="text/javascript" src="scripts/Registration.js"></script>-->
+    </head>
+    <body>
+        <div class="header">
+            <!--Header Bar (Top) - "Stats" on PD--> 
+            <div class=center>
+                <div class="stat1">
+                    Bid | {{ bid_price }}
+                </div>
+                <div class="stat2">
+                    Latest | {{ latest_price }}
+                </div>
+                <div class="stat3">     
+                    Ask | {{ ask_price }}
+                </div>
+                <div class="stat4">
+                    <a class="headerlink" href="/register/">Register</a>
+                </div>
+                <div class="stat5">
+                    <a class="headerlink" href="/login/">Login</a>
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <!--Banner Bar (Middle) - "Banner" on PD-->
+        </div>
+        <br><br><br>
+        <div id="formcenter">
+            <p id="registerheader">Register</p>
+            <form action="/orderbook/" method="post">
+                {% csrf_token %}
+                <input class="registertext" type="text" name="username" placeholder="Username"><br>
+                <input class="registertext" type="password" name="password" placeholder="Password"><br>
+                <input class="registertext" type="email" name="email" placeholder="Email"><br>
+                <input class="registertext" type="text" name="firstname" placeholder="First Name"><br>
+                <input class="registertext" type="text" name="lastname" placeholder="Last Name"><br>
+                <input id="registersubmit" type="submit" value="Register">
+            </form>
+        </div>
+    </body>
+</html>

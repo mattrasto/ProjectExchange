@@ -1,0 +1,70 @@
+{% extends "base_active.html" %}
+
+{% block title %}BitSomething - Orders{% endblock %}
+
+{% block static %}
+<link type="text/css" rel="stylesheet" href="/static/OrderBook3.css"/>
+{% endblock %}
+
+{% block content %}
+
+<div id="orderbook">
+    <div id="leftbasicorderswrapper">
+        <div id="leftbasicordersheader">
+            <h3>Buy Book</h3>
+        </div>
+        <table class="basicorders" id="leftbasicorders">
+          <tr>
+            <th>Order</th>
+            <th>Type</th>
+            <th>Price</th> 
+            <th>Volume</th>
+          </tr>
+          {% for order in buy_order_list %}
+          <tr>
+            <td>{{ order.ordernumber.idnumber}}</td>
+            <td>{{ order.type }}</td>
+            <td>{{ order.price }}</td> 
+            <td>{{ order.volume}}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>No Orders</td>
+            <td>-</td> 
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+    <div id="rightbasicorderswrapper">
+        <div id="rightbasicordersheader">
+            <h3>Sell Book</h3>
+        </div>
+        <table class="basicorders" id="rightbasicorders">
+          <tr>
+            <th>Order</th>
+            <th>Type</th>
+            <th>Price</th> 
+            <th>Volume</th>
+          </tr>
+          {% for order in sell_order_list %}
+          <tr>
+            <td>{{ order.ordernumber.idnumber}}</td>
+            <td>{{ order.type }}</td>
+            <td>{{ order.price }}</td> 
+            <td>{{ order.volume}}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>No Orders</td>
+            <td>-</td> 
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

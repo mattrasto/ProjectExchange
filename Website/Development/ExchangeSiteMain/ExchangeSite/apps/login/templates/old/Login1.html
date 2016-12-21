@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="../static/Login.css"/>
+        <title>Exchange Website</title>
+    </head>
+    <body>
+        <div class="header">
+            <!--Header Bar (Top) - "Stats" on PD--> 
+            <div class=center>
+                <div class="stat1">
+                    Bid | {{ bid_price }}
+                </div>
+                <div class="stat2">
+                    Latest | {{ latest_price }}
+                </div>
+                <div class="stat3">     
+                    Ask | {{ ask_price }}
+                </div>
+                <div class="stat4">
+                    <a class="headerlink" href="/register/">Register</a>
+                </div>
+                <div class="stat5">
+                    <a class="headerlink" href="/login/">Login</a>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <!--Banner Bar (Middle) - "Banner" on PD-->
+            <div class="center">
+                <div class="bannerlogo">
+                    Logo
+                </div>
+                <div class="bannerspace">
+                    <div class="menubar">
+                       <form name="input" action="/" method="get">
+                            <input class="menubutton" type="submit" value="Home">
+                        </form>
+                        <form name="input" action="/orderbook/" method="get">
+                            <input class="menubutton" type="submit" value="Trade">
+                        </form>
+                        <form name="input" action="/orderbook/" method="get">
+                            <input class="menubutton" type="submit" value="Orders">
+                        </form>
+                        <form name="input" action="/orderbook/" method="get">
+                            <input class="menubutton" type="submit" value="Account">
+                        </form>
+                        <form name="input" action="/orderbook/" method="get">
+                            <input class="menubutton" type="submit" value="About">
+                        </form> 
+                    </div>
+                    <div class="wealthbar">
+                        <div id="cryptoblock">
+                            BTC Balance:<br>
+                            Total Net Worth:
+                        </div>
+                        <div id="fiatblock">
+                            {{ btc_credit }} BTC<br>
+                            {{ total_net_worth }} USD
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div id="formcenter">
+            <p id="loginheader">Login</p>
+            <form action="/orderbook/" method="post">
+                {% csrf_token %}
+                <input class="logintext" type="text" name="username" placeholder="Username"><br>
+                <input class="logintext" type="password" name="password" placeholder="Password"><br>
+                <input id="loginsubmit" type="submit" value="Login">
+            </form>
+        </div>
+    </body>
+</html>

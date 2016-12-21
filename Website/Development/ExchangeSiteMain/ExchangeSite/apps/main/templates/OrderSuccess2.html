@@ -1,0 +1,33 @@
+{% extends "base_active.html" %}
+
+{% block title %}BitSomething - Order Placed{% endblock %}
+
+{% block static %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}OrderSuccess2.css">
+{% endblock %}
+
+{% block content %}
+
+<div id="messageblock">
+    <div id="messageblockheader">
+        <h3>{{ order.4 }} Order {{ order.0 }} Placed</h3>
+    </div>
+    <div id="messageblockcontent">
+        <p>Your order was successfully placed. Your order details are:</p>
+        <ul>
+            <li><b>Number:</b> {{ order.0 }}</li>
+            <li><b>Type:</b> {{ order.4 }}</li>
+            <li><b>Action:</b> {{ order.5 }}</li>
+            <li><b>Price:</b> {{ order.2 }}</li>
+            <li><b>Volume:</b> {{ order.3 }}</li>
+            {% if order.4 == "Conditional" %}
+            <li><b>Condition:</b> {{ order.6 }}</li>
+            <li><b>Condition Value:</b> {{ order.7 }}</li>
+            {% endif %}
+        </ul>
+        <p>If any of these details are incorrect, please either delete your order and remake it or update it.</p>
+        <p>Keep in mind that if your order is transacted before you modify or delete it, it will be considered a valid transaction and your order will not be able to be modified.</p>
+    </div>
+</div>
+
+{% endblock %}

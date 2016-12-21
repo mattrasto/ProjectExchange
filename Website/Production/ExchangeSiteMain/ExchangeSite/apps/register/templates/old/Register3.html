@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>BitSomething</title>
+        <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}Register3.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}scripts/lockheader.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <!--Header Bar (Top) - "Stats" on PD--> 
+                <div class="center">
+                    <div class="statdescription" id="statdescription1">
+                        <p>Bid</p>
+                    </div>
+                    <div class="statvalue" id="statvalue1">
+                        <p>{{ bid_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription2">
+                        <p>Latest</p>
+                    </div>
+                    <div class="statvalue" id="statvalue2">
+                        <p>{{ latest_price }}</p>
+                    </div>
+                    <div class="statdescription" id="statdescription3">     
+                        <p>Ask</p>
+                    </div>
+                    <div class="statvalue" id="statvalue3">
+                        <p>{{ ask_price }}</p>
+                    </div>
+                    <div id="logo">
+                        <!-- <img src=../static/images/graylogosmall.png style=width:128px;height:40px;> -->
+                        <a href="/">BitSomething</a>
+                    </div>
+                    <div class="statdescription" id="statdescription4">
+                        <a class="headerlink" href="/register/">Register</a>
+                    </div>
+                    <div class="statdescription" id="statdescription5">
+                        <a class="headerlink" href="/login/">Login</a>
+                    </div>
+                </div>
+                <div id="lockbuttonwrapper">
+                    <input id="lockbutton" type="button" onclick="lock()" value="Unlock">
+                </div>
+            </div>
+            <div id="centerwrapper">
+                <!--Menu Bar (Middle) - "Banner" on PD-->
+                <div id="menubar">
+                    <form name="input" action="/" method="get">
+                        <input class="menubutton" id="firstmenubutton" type="submit" value="Home">
+                    </form>
+                    <form name="input" action="/login/" method="get">
+                        <input class="menubutton" type="submit" value="Trade">
+                    </form>
+                    <form name="input" action="/login/" method="get">
+                        <input class="menubutton" id="middlemenubutton" type="submit" value="Orders">
+                    </form>
+                    <form name="input" action="/login/" method="get">
+                        <input class="menubutton" type="submit" value="Account">
+                    </form>
+                    <form name="input" action="/about/" method="get">
+                        <input class="menubutton" id="lastmenubutton" type="submit" value="About">
+                    </form>
+                </div>
+                <div id="underbody">
+                    <div id="underbodycenter">
+                        <div id="registerblock">
+                            <div id="formblock">
+                                <div id="formblockheader">
+                                    <h3>Register</h3>
+                                </div>
+                                <div id="formblockcontent">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        {{ register_form.errors }}
+                                        <p>Username:</p>
+                                        {{ register_form.username }}
+                                        <p>Password:</p>
+                                        {{ register_form.password }}
+                                        <p>Email:</p>
+                                        {{ register_form.email }}
+                                        <p>First Name (Optional):</p>
+                                        {{ register_form.firstname }}
+                                        <p>Last Name (Optional):</p>
+                                        {{ register_form.lastname }}
+                                        <input id="registersubmit" type="submit" value="Register"><br>
+                                        <a href="/registerhelp/">Having Trouble</a>
+                                        <span class="bullet">&#8226;</span>
+                                        <a href="/login/">Already Registered</a>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="featuresblock">
+                                <div id="featuresblockheader">
+                                    <h3>What We Offer</h3>
+                                </div>
+                                <div id="featuresblockcontent">
+                                    <p>By agreeing to our terms and making a BitSomething account:</p>
+                                    <ul>
+                                        <li>You will have full control over your trades and loans</li>
+                                        <li>You will be able to trade in over 2 gajillion different currencies</li>
+                                        <li>You will never have to worry over your investment again</li>
+                                        <li>You will have access to a high level of support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footercolumn">
+                    <h2>Social</h2>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Google+</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Legal</h2>
+                    <li>License</li>
+                    <li>Terms and Conditions</li>
+                    <li>Copyright</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>Help</h2>
+                    <li>FAQ</li>
+                    <li>Submit A Ticket</li>
+                    <li>Address</li>
+                </div>
+                <div class="footercolumn">
+                    <h2>API</h2>
+                    <li>Download</li>
+                    <li>Documentation</li>
+                    <li>Help Improve It</li>
+                </div>
+                <div id="footerlanguages">
+                    <li>English</li>
+                    <li>Deutsch</li>
+                    <li>ру́сский</li>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+Limit Order Transaction 1:
+--------------------
+Transaction Details:
+
+Transaction Date: 5/1/2014
+Transaction Time: 18:57:02
+Transaction Number: 1
+Order Type: FULL SELL
+Limit Order Number: Order5
+Buy Account: Account6
+Sell Account: Account5
+Transaction Volume: 7
+Transaction Price: 600
+Transaction Total: 4200
+
+Account Crediting:
+
+Account5: +$4200 and -7 BTC
+--------------------
+Limit Order Transaction 2:
+--------------------
+Transaction Details:
+
+Transaction Date: 5/1/2014
+Transaction Time: 18:57:02
+Transaction Number: 2
+Order Type: PARTIAL SELL
+Limit Order Number: Order2
+Buy Account: Account6
+Sell Account: Account2
+Transaction Volume: 3
+Transaction Price: 540
+Transaction Total: 1620
+
+Account Crediting:
+
+Account2: +$1620 and -3 BTC
+--------------------
+Limit Order Transaction 1:
+--------------------
+Transaction Details:
+
+Transaction Date: 5/1/2014
+Transaction Time: 19:06:05
+Transaction Number: 1
+Order Type: FULL SELL
+Limit Order Number: Order5
+Buy Account: Account6
+Sell Account: Account5
+Transaction Volume: 7
+Transaction Price: 600
+Transaction Total: 4200
+
+Account Crediting:
+
+Account5: +$4200 and -7 BTC
+--------------------
+Limit Order Transaction 2:
+--------------------
+Transaction Details:
+
+Transaction Date: 5/1/2014
+Transaction Time: 19:06:05
+Transaction Number: 2
+Order Type: PARTIAL SELL
+Limit Order Number: Order2
+Buy Account: Account6
+Sell Account: Account2
+Transaction Volume: 3
+Transaction Price: 540
+Transaction Total: 1620
+
+Account Crediting:
+
+Account2: +$1620 and -3 BTC
+--------------------
+Limit Order Transaction 1:
+--------------------
+Transaction Details:
+
+Transaction Date: 5/3/2014
+Transaction Time: 8:45:59
+Transaction Number: 1
+Order Type: FULL SELL
+Limit Order Number: Order5
+Buy Account: Account6
+Sell Account: Account5
+Transaction Volume: 7
+Transaction Price: 600
+Transaction Total: 4200
+
+Account Crediting:
+
+Account5: +$4200 and -7 BTC
+--------------------
+Limit Order Transaction 2:
+--------------------
+Transaction Details:
+
+Transaction Date: 5/3/2014
+Transaction Time: 8:45:59
+Transaction Number: 2
+Order Type: PARTIAL SELL
+Limit Order Number: Order2
+Buy Account: Account6
+Sell Account: Account2
+Transaction Volume: 3
+Transaction Price: 540
+Transaction Total: 1620
+
+Account Crediting:
+
+Account2: +$1620 and -3 BTC
+--------------------

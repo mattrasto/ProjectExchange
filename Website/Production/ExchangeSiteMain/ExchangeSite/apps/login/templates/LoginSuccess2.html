@@ -1,0 +1,28 @@
+{% extends "base_active.html" %}
+
+{% block title %}BitSomething - Login{% endblock %}
+
+{% block static %}
+
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}LoginSuccess2.css"/>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="messageblock">
+    <div id="messageblockheader">
+        <h3>Login Successful</h3>
+    </div>
+    <div id="messageblockcontent">
+        <p>Your login was successful. You are logged in as {{ user.username }}. Here are some links to things you may want to do:</p>
+        <ul>
+            <li><a href="/active/trading/">Start trading</a></li>
+            <li><a href="/active/account/">Configure/Update your account settings</a></li>
+            <li><a href="/active/homepage/">Check the Homepage for any important messages or notices from BitSomething</a></li>
+            <li><a href="/active/about/">Read about BitSomething, Bitcoin, and more</a></li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

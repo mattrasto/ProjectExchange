@@ -1,0 +1,67 @@
+------------------------------
+Transaction Details:
+
+Transaction Number: 1
+Transaction Date: 11/6/2014
+Transaction Time: 20:18:38
+Transaction Price: 691.14
+Transaction Volume: 1.98
+Transaction Total: 1368.4572
+Spread Profit: 35.4618
+Trading Fee Profit: 13.684572
+Total Profit: 49.146372
+
+Buy Order Number: 12
+Buy Order Account: Username1
+Buy Order Price: 709.05
+Buy Order Volume: 2.16
+Buy Order Trading Fee Rate: 0.005
+Buy Order Adjusted Volume: 1.9701
+Buy Order Type: Limit
+Buy Order Completion: Partial
+
+Sell Order Number: 74
+Sell Order Account: Username0
+Sell Order Price: 691.14
+Sell Order Trading Fee Rate: 0.005
+Sell Order Adjusted Price: 687.6843
+Sell Order Volume: 1.98
+Sell Order Type: Limit
+Sell Order Completion: Full
+
+Username1: -$1368.4572 and +1.9701 BTC
+Username0: +$1361.614914 and -1.98 BTC
+------------------------------------------------------------
+Transaction Details:
+
+Transaction Number: 1
+Transaction Date: 11/6/2014
+Transaction Time: 20:59:39
+Transaction Price: 690.23
+Transaction Volume: 2.13
+Transaction Total: 1470.1899
+Spread Profit: 41.0664
+Trading Fee Profit: 14.701899
+Total Profit: 55.768299
+
+Buy Order Number: 40
+Buy Order Account: Username0
+Buy Order Price: 709.51
+Buy Order Volume: 2.21
+Buy Order Trading Fee Rate: 0.005
+Buy Order Adjusted Volume: 2.11935
+Buy Order Type: Liquid
+Buy Order Completion: Partial
+
+Sell Order Number: 83
+Sell Order Account: Username1
+Sell Order Price: 690.23
+Sell Order Trading Fee Rate: 0.005
+Sell Order Adjusted Price: 686.77885
+Sell Order Volume: 2.13
+Sell Order Type: Liquid
+Sell Order Completion: Full
+
+Username0: -$1470.1899 and +2.11935 BTC
+Username1: +$1462.8389505 and -2.13 BTC
+------------------------------

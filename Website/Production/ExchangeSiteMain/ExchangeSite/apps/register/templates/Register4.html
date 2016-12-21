@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}BitSomething - Register{% endblock %}
+
+{% block static %}
+
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}Register4.css"/>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="registerblock">
+    <div id="formblock">
+        <div id="formblockheader">
+            <h3>Register</h3>
+        </div>
+        <div id="formblockcontent">
+            <form method="post">
+                {% csrf_token %}
+                {{ register_form.errors }}
+                <p>Username:</p>
+                {{ register_form.username }}
+                <p>Password:</p>
+                {{ register_form.password }}
+                <p>Email:</p>
+                {{ register_form.email }}
+                <p>First Name (Optional):</p>
+                {{ register_form.firstname }}
+                <p>Last Name (Optional):</p>
+                {{ register_form.lastname }}
+                <br><input id="registersubmit" type="submit" value="Register"><br>
+                <a href="/registerhelp/">Having Trouble</a>
+                <span class="bullet">&#8226;</span>
+                <a href="/login/">Already Registered</a>
+            </form>
+        </div>
+    </div>
+    <div id="featuresblock">
+        <div id="featuresblockheader">
+            <h3>What We Offer</h3>
+        </div>
+        <div id="featuresblockcontent">
+            <p>By agreeing to our terms and making a BitSomething account:</p>
+            <ul>
+                <li>You will have full control over your trades and loans</li>
+                <li>You will be able to trade in over 2 gajillion different currencies</li>
+                <li>You will never have to worry over your investment again</li>
+                <li>You will have access to a high level of support</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

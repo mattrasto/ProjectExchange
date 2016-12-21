@@ -1,0 +1,165 @@
+{% extends "base_active.html" %}
+
+{% block title %}BitSomething - Home{% endblock %}
+
+{% block static %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}Homepage8.css"/>
+<script src="{{ STATIC_URL }}scripts/homepagetutorialselect.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}scripts/homepagenewstopicselect2.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+
+<div id="newsblock">
+<div id="newsblockheader">
+    <h3>BitSomething News</h3>
+</div>
+<div id="newsblocknavigation">
+    <ul>
+        <li><input class="newsselect" id="statement" type="button" value="Statement"></li>
+        <!-- Example news topic -->
+        <li><input class="newsselect" type="button" value="Welcome"></li>
+        {% for story in news_stories %}
+        <li><input class="newsselect" id="story{{ story.story_id }}" type="button" value="{{ story.title }}" 
+            {% if story.type == 'change' %}style="color: #5EC454;"
+            {% elif story.type == 'recommended' %}style="color: #C291E5;"
+            {% elif story.type == 'important' %}style="color: #FF615F;"
+            {% endif %}></li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="newsblockcontent" id="Statement" style="display: inline-block;">
+    <h2>News Selection</h2>
+    <p>Please select the article you wish to view from the navigation bar to the left. 
+    All of these articles are published by BitSomething employees and are considered official 
+    documents from the exchange. We recommend that you try to stay up to date with the news 
+    by checking this page for new notices periodically in order to be aware of any important 
+    changes or updates. The following is the color code for the navigation bar:</p>
+    <ul>
+        <li>Normal messages are <b>gray</b></li>
+        <li>New features or changes are <span style="color: #5EC454"><b>green</b></span></li>
+        <li>Recommended actions are <span style="color: #C291E5"><b>purple</b></span></li>
+        <li>Important notices are <span style="color: #FF615F"><b>red</b></span></li>
+    </ul>
+</div>
+<!-- Example news piece -->
+<div class="newsblockcontent" id="Welcome">
+    <h2>Welcome</h2>
+    <p>Welcome to the Bitsomething exchange homepage! The site is currently under construction, and this sample
+    news piece will serve as an introduction. I'm Mal, the only current developer. This project was first started in January of 2014.
+    It began small, when I sketched out the exchange engine code in a few weeks. I then built it up to what it
+    is now: a nearly operational Bitcoin exchange! Most of the very basic functions are complete. Here's a list
+    of mostly finished features:</p>
+    <ul>
+        <li>User Control - Registering/Logging in</li>
+        <li>Basic Orders - Placing, transacting, and seeing open orders in Account</li>
+        <li>Guest Pages - Non-registered users can view the guest homepage and the About pages</li>
+    </ul>
+    <span>These are the things that are currently on the to-do list:</span>
+    <ul>
+        <li>Enable logging out</li>
+        <li>Finish About page</li>
+        <li>Start linking Account to account statistics</li>
+        <li>Make order book more informative</li>
+        <li>Add Personal Control Panel</li>
+        <li>Add admin page options for adding orders, users, and news blocks</li>
+        <li>Add petition system</li>
+    </ul>
+    <br><span class="signature">-Mal</span><span class="publishdate">Nov. 1, 2014, 2:53 p.m.</span>
+</div>
+{% for story in news_stories %}
+<div class="newsblockcontent" id="content{{ story.story_id }}">
+    <h2>{{ story.title }}</h2>
+    <p>{{ story.content }}</p>
+    <span class="signature">-{{ story.author }}</span><span class="publishdate">{{ story.date_entered }}</span>
+</div>
+{% endfor %}
+</div>
+<div id="orderbook">
+<div id="leftbasicorderswrapper">
+    <div id="leftbasicordersheader">
+        <h3>Top Buy Orders</h3>
+    </div>
+    <table class="basicorders" id="leftbasicorders">
+      <tr>
+        <th>Order</th>
+        <th>Type</th>
+        <th>Price</th> 
+        <th>Volume</th>
+      </tr>
+      {% for order in buy_order_list %}
+      <tr>
+        <td>{{ order.ordernumber.idnumber}}</td>
+        <td>{{ order.type }}</td>
+        <td>{{ order.price }}</td> 
+        <td>{{ order.volume}}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td>No Orders</td>
+        <td>-</td> 
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      {% endfor %}
+    </table>
+</div>
+<div id="rightbasicorderswrapper">
+    <div id="rightbasicordersheader">
+        <h3>Top Sell Orders</h3>
+    </div>
+    <table class="basicorders" id="rightbasicorders">
+      <tr>
+        <th>Order</th>
+        <th>Type</th>
+        <th>Price</th> 
+        <th>Volume</th>
+      </tr>
+      {% for order in sell_order_list %}
+      <tr>
+        <td>{{ order.ordernumber.idnumber}}</td>
+        <td>{{ order.type }}</td>
+        <td>{{ order.price }}</td> 
+        <td>{{ order.volume}}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td>No Orders</td>
+        <td>-</td> 
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      {% endfor %}
+    </table>
+</div>
+</div>
+<div id="tutorialblock">
+<div id="tutorialblockheader">
+    <h3>What is Bitcoin?</h3>
+</div>
+<div class="tutorialbar">
+    <div class="tutorialbutton" id="tutorial1">
+        What is Bitcoin?
+    </div>
+    <div class="tutorialbutton" id="tutorial2">
+        How does it work?
+    </div>
+    <div class="tutorialbutton" id="tutorial3">
+        Why use it?
+    </div>
+    <div class="tutorialbutton" id="tutorial4">
+        Why use us?
+    </div>
+</div>
+<div id="tutorialcontent">
+    <h1>A Financial Transformation</h1>
+    <p>Bitcoin was the first cryptocurrency; that is, a digitally stored currency. 
+    It's stored on computers, like any other piece of data, and can be transferred 
+    anywhere in the world for less fees than a credit card. It's based on a protocol called the "Blockchain," which is 
+    a registry of all transactions ever conducted. This enables Bitcoin, and 
+    its other cryptocurrency children, to be a safer, faster, and more reliable way to 
+    pay and store value.</p>
+</div>
+</div>
+
+{% endblock %}

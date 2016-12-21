@@ -1,0 +1,36 @@
+{% extends "base_active.html" %}
+
+{% block title %}BitSomething - Order Placed{% endblock %}
+
+{% block static %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}InstantOrderSuccess1.css">
+{% endblock %}
+
+{% block content %}
+
+<div id="messageblock">
+    <div id="messageblockheader">
+        <h3>{{ order.7 }} Order {{ order.1 }} Placed</h3>
+    </div>
+    <div id="messageblockcontent">
+        <p>Your order was successfully placed and transacted. Your order details are:</p>
+        <ul>
+            <li><b>Number:</b> {{ order.1 }}</li>
+            <li><b>Type:</b> {{ order.7 }}</li>
+            <li><b>Action:</b> {{ order.8 }}</li>
+            <li><b>Price (Per Unit):</b> {{ order.5 }}</li>
+            <li><b>Volume:</b> {{ order.6 }}</li>
+            <li><b>Order Total:</b> {{ order_total }}</li>
+            <!-- UPDATE TRANSACTION NUMBER IN INSTANT ORDER LOG -->
+            <!-- CHANGE APPEARANCE OF INSTANT ORDER VIEW IN TRADING TERMINAL -->
+            <!-- CONFIRMATION: YES, RETURN STATS IN CONFIRM PAGE, THEN CONFIRMATION: NO? -->
+            <!-- GIVE OPTION WITH DISCLAIMER THAT PRICES MAY CHANGE? -->
+            <!-- FOR NOW, JUST DO AUTOMATIC CONFIRMATION -->
+            <li><b>Last Transaction:</b> {{ order.12 }}</li>
+        </ul>
+        <p>If any of these details are incorrect, please either delete your order and remake it or update it.</p>
+        <p>Keep in mind that if your order is transacted before you modify or delete it, it will be considered a valid transaction and your order will not be able to be modified.</p>
+    </div>
+</div>
+
+{% endblock %}

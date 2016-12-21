@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="../static/Blank.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--    <script type="text/javascript" src="scripts/Homepage.js"></script>    -->
+    </head>
+    <body>
+        <div class="header">
+            <!--Header Bar (Top) - "Stats" on PD--> 
+            <div class=center>
+                <div class="stat1">
+                    Bid | {{ bid_price }}
+                </div>
+                <div class="stat2">
+                    Latest | {{ latest_price }}
+                </div>
+                <div class="stat3">     
+                    Ask | {{ ask_price }}
+                </div>
+                <div class="stat4">
+                    <a class="headerlink" href="/register/">Register</a>
+                </div>
+                <div class="stat5">
+                    <a class="headerlink" href="/login/">Login</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        Top Basic Orders:<br>
+        <br>
+        <table class="basicorders" id="leftbasicorders">
+          <tr>
+            <th>Order Number</th>
+            <th>Type</th>
+            <th>Price</th> 
+            <th>Volume</th>
+          </tr>
+          {% for order in buy_order_list %}
+          <tr>
+            <td>{{ order.ordernumber.idnumber}}</td>
+            <td>{{ order.type }}</td>
+            <td>{{ order.price }}</td> 
+            <td>{{ order.volume}}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>No Orders</td>
+            <td>-</td> 
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <table class="basicorders" id="rightbasicorders">
+          <tr>
+            <th>Order Number</th>
+            <th>Type</th>
+            <th>Price</th> 
+            <th>Volume</th>
+          </tr>
+          {% for order in sell_order_list %}
+          <tr>
+            <td>{{ order.ordernumber.idnumber}}</td>
+            <td>{{ order.type }}</td>
+            <td>{{ order.price }}</td> 
+            <td>{{ order.volume}}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>No Orders</td>
+            <td>-</td> 
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <br>
+        <p>Transactions:</p>
+        <table id="transactions">
+          <tr>
+            <th>Transaction Number</th>
+            <th>Date</th>
+            <th>Price</th> 
+            <th>Volume</th>
+            <th>Total</th>
+            <th>Buy Order Number</th>
+            <th>Sell Order Number</th>
+          </tr>
+          {% for transaction in transaction_list %}
+          <tr>
+            <td>{{ transaction.transactionnumber }}</td>
+            <td>{{ transaction.transactiondate|date:"M d, Y" }}</td>
+            <td>{{ transaction.transactionprice }}</td>
+            <td>{{ transaction.transactionvolume }}</td> 
+            <td>{{ transaction.transactiontotal }}</td>
+            <td>{{ transaction.buyordernumber }}</td>
+            <td>{{ transaction.sellordernumber }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>No Transactions</td>
+            <td>-</td> 
+            <td>-</td>
+            <td>-</td>
+            <td>-</td> 
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>

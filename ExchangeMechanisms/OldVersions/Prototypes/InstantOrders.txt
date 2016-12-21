@@ -1,0 +1,69 @@
+Instant Order Transaction 3:
+--------------------
+Transaction Date: 5/1/2014
+Transaction Time: 18:57:02
+Transaction Number: 3
+Instant Order Volume: 10
+Instant Order Average Price: 582
+Transaction Total: 5820
+
+Fulfilled Orders:
+
+Transaction Number: 1
+Order Number: Order5
+Account Number: Account5
+Transaction Volume: 7
+Transaction Price: 600
+
+Transaction Number: 2
+Order Number: Order2
+Account Number: Account2
+Transaction Volume: 3
+Transaction Price: 540
+
+Instant Order Transaction 3:
+--------------------
+Transaction Date: 5/1/2014
+Transaction Time: 19:06:05
+Transaction Number: 3
+Instant Order Volume: 10
+Instant Order Average Price: 582
+Transaction Total: 5820
+
+Fulfilled Orders:
+
+Transaction Number: 1
+Order Number: Order5
+Account Number: Account5
+Transaction Volume: 7
+Transaction Price: 600
+
+Transaction Number: 2
+Order Number: Order2
+Account Number: Account2
+Transaction Volume: 3
+Transaction Price: 540
+
+Instant Order Transaction 3:
+--------------------
+Transaction Date: 5/3/2014
+Transaction Time: 8:45:59
+Transaction Number: 3
+Instant Order Volume: 10
+Instant Order Average Price: 582
+Transaction Total: 5820
+
+Fulfilled Orders:
+
+Transaction Number: 1
+Order Number: Order5
+Account Number: Account5
+Transaction Volume: 7
+Transaction Price: 600
+
+Transaction Number: 2
+Order Number: Order2
+Account Number: Account2
+Transaction Volume: 3
+Transaction Price: 540
+

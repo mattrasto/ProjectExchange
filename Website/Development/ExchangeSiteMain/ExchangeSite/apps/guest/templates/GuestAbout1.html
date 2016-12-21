@@ -1,0 +1,356 @@
+{% extends "base.html" %}
+
+{% block title %}BitSomething - About{% endblock %}
+
+{% block static %}
+
+<link type="text/css" rel="stylesheet" href="/static/GuestAbout1.css"/>
+<!-- NEEDS TO BE OVERWRITTEN; WHY? -->
+<script src="/static/scripts/lockheader.js" type="text/javascript"></script>
+<script src="/static/scripts/abouttopicselect.js" type="text/javascript"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="aboutblock">
+    <div id="aboutblockheader">
+        <h3>Information is Key</h3>
+    </div>
+    <div id="aboutblocknavigation">
+        <ul>
+            <li>
+                <input class="navigationselect" id="navigationselect1" type="button" value="BitSomething" style="color: #7DABFF;">
+                <ul class="innerlist">
+                    <li><input class="navigationselectinner1" type="button" value="Common Terms"></li>
+                    <li><input class="navigationselectinner1" type="button" value="Basic Orders"></li>
+                    <li><input class="navigationselectinner1" type="button" value="MTC's"></li>
+                    <li><input class="navigationselectinner1" type="button" value="Loans"></li>
+                    <li><input class="navigationselectinner1" type="button" value="Private Trades"></li>
+                    <li><input class="navigationselectinner1" type="button" value="Petition System"></li>
+                </ul>
+            </li>
+            <li>
+                <input class="navigationselect" id="navigationselect2" type="button" value="Bitcoin">
+                <ul class="innerlist">
+                    <li><input class="navigationselectinner2" type="button" value="The Network"></li>
+                    <li><input class="navigationselectinner2" type="button" value="The Blockchain"></li>
+                    <li><input class="navigationselectinner2" type="button" value="Mining"></li>
+                </ul>
+            </li>
+            <li><input class="navigationselect" id="navigationselect3" type="button" value="API"></li>
+            <li><input class="navigationselect" id="navigationselect4" type="button" value="Resources"></li>
+        </ul>
+    </div>
+    <div class="aboutblockcontent" id="content1">
+        <h2>BitSomething</h2>
+        <p>BitSomething is a cryptocurrency exchange. The primary function of a cryptocurrency exchange
+        is to allow people to trade their local fiat currency, such as the American Dollar, British Pound, or Chinese Yuan
+        into any type of cryptocurrency, such as Bitcoin, Litecoin, or Dogecoin.</p>
+        <p>Our specific exchange was formed around three basic principles: trust, utility, and security. We want our users
+        to have faith that their data, and their assets, are kept both safe and growing. We will do the first part, but
+        making the money is your job! To help you with it, we provide endless possibilities of order options, with flexible
+        tools that will allow you to craft your order and desired output however you wish.</p>
+    </div>
+    <div class="aboutblockcontent" id="content2">
+        <h2>Common Terms</h2>
+        <p>Our exchange has a vocabulary that can vary from different exchanges and may be new to those who have never traded cryptocurrency before. " +
+        Here is a list of most of the terms that may be specific to BitSomething:</p><br>
+        <ul>
+            <li>
+                <b>Basic Order</b> - These are the simplest of all of our trading features.
+                "Placing a Basic Order can be as simple as buying a certain number of Bitcoins to
+                "placing an order that only becomes available when a certain condition is met. There are 4 types:
+                <ul>
+                    <li>Instant</li>
+                    <li>Liquid</li>
+                    <li>Limit</li>
+                    <li>Conditional</li>
+                </ul>
+            </li><br>
+            <li>
+                <b>Marginal Trade Contract (MTC)</b> - The Marginal Trade Contract is a way for players to lend
+                money for a single trade. A MTC is a contractual order, in that it must be accepted by both
+                parties with a handshake agreement. Once it is initiated, it will remain active
+                until it is either fulfilled, stopped, or it runs out of duration.
+            </li><br>
+            <li>
+                <b>Loan</b> - A Loan is a contract between two users where a certain amount of currency is exchanged for a specific period.
+                At the end of the duration, the currency is paid back with an option of interest.
+            </li><br>
+            <li>
+                <b>Private Trade</b> - For a situation where a user simply wants to trade a certain amount of cryptocurrency to another player
+                at their own specified price, a Private Trade is the best option. It allows two players to enter a contractual agreement that does a simple
+                trade between fiat and cryptocurrency with different contract options.
+            </li>
+         </ul>
+    </div>
+    <div class="aboutblockcontent" id="content3">
+        <h2>Basic Orders</h2>
+        <p>A Basic Order is the basic trading tool for the market. These orders are simple buy/sell orders 
+        placed by users that will shape the price of the currency. There are 4 types of basic orders:</p><br>
+        <ul>
+            <li><b>Instant Order:</b> This is the simplest of all orders. You input a price or a volume, and the other part is automatically calculated. 
+                You then need to simply place the order and it is done without any wait</li><br>
+            <li><b>Limit Order:</b> The limit order is the basis of the price; it is what determines the supply and demand of the market. A user will 
+                specify a price and a volume to post an order at. The order will be placed in a queue that will only be transacted at that specified price. 
+                When the market price hits the specified order price (Ask price for buy orders and bid price for sell orders), the order will be transacted 
+                with the most appropriate order.</li><br>
+            <li><b>Liquid Order:</b> This order is slightly more complex. A user specifies a price and volume, and the order will remain at that price. 
+                It will always transact that price, but it is able to switch functions between a limit and instant order depending on the market price. 
+                If the price of the order is "past" the market price, (eg. if you had a buy order placed at $400 when the price is $300 or a sell order 
+                placed at $300 when the bid price is $400), it will act exactly like an instant order and transact automatically until the market goes "within"
+                the price again. If the price of the order is "within" the market price, the order will act as a limit order until it is either fully transacted or 
+                the market price goes "past" the order price.</li><br>
+            <li><b>Conditional Order:</b> The conditional order is true to its name: it is an order that is activated by a condition. When created, the user 
+                specifies the price and volume as well as the condition type and condition value. The condition type is a certain market statistic that 
+                will, at the specified value, activate your order for trading. Once activated, your order will stay active, though persistent conditions 
+                are planned for a future update that will allow the order to be enabled or disabled constantly. These orders are useful for if you want 
+                your order to only be transacted if certain conditions are met. For example, you could place a buy order at $300 with the condition that 
+                the ask price must go above $400. If the price at the time of placing your order was $350, a limit or liquid order would be transacted if 
+                the ask price dropped immediately to $300. A conditional order would only transact if the ask price had increased to $400 and then dropped back 
+                down to $300.</li>
+        </ul><br><br>
+        <p>Liquid, limit, and conditional orders all require both a price and a volume, while a conditional order also contains two optional criteria:</p>
+        <ul>
+            <li><b>Price:</b> The price per unit of the selected currency. If it's $5 for 1 unit, it's $5 for 2 units.</li>
+            <li><b>Volume:</b> The amount of the currency you want to buy. The order's total is calculated by multiplying this by the price.</li>
+            <li><b>Condition (Conditional only):</b> If you choose a conditional order, this is the condition that will activate your order if met. You can 
+                choose between the current Bid, Ask, or Latest price.</li>
+            <li><b>Condition Value (Conditional only):</b> If you choose a conditional order, the condition will be met at this particular point.</li>
+        </ul>
+    </div>
+    <div class="aboutblockcontent" id="content4">
+        <h2>MTC's</h2>
+        <p style="color: red;text-align: center;text-indent: 0px;">Under Construction</p>
+        <p>MTC stands for "Marginal Trade Contract." These are special contracts that are posted by users with a certain set of properties, referred to as 
+        MTC properties, that can be accepted by other users and are held as a type of loan. It is a tool used to hedge one's losses by using someone else's
+        money for a trade. The user cannot use this loaned currency for any other orders, trades, or loans.The MTC is valid unless it is canceled by a mutual 
+        agreement between both parties, its duration is fulfilled, or the price hits the Stop Loss Price or the Fulfillment Price. The following are all of the 
+        possible contract properties that can be specified:</p><br>
+        <ul>
+            <li><b>Contract Amount:</b> This property is akin to the volume property of a basic order. It specifies the amount of currency that is to be loaned.</li><br>
+            <li><b>Contract Price:</b> The price at which the contract is loaned at. This price does not change; it is only a marker to determine what the profit/loss 
+                is based on the starting price of the MTC.</li><br>
+            <li><b>Interest Compound Rate (Optional):</b> The rate at which interest is compounded on the contract. This is an interval, and at each tick of the interval (1 hour, 
+                for example) the interest specified in the interest rate property will be compounded.</li><br>
+            <li><b>Interest Rate:</b> The amount of interest that is to be added to the amount owed back to the lender at each tick of the interest compiund rate property.</li><br>
+            <li><b>Stop Loss Price (Optional):</b> If the latest price goes below this price, the contract will be automatically canceled without any confirmation from either party.</li><br>
+            <li><b>Fulfillment Price (Optional):</b> If the latest price goes above this price, the contract will be automatically canceled without any confirmation from either party.</li><br>
+            <li><b>Duration:</b> The time length that the MTC will be active before it is considered "completed" and automatically canceled.</li><br>
+            <li><b>Dividend Type:</b> The method by which the lender owns equity in the contract. This can be either "Flat" or "Percent." When the contract ends and the amount of money 
+                borrowed is returned with interest, the dividend type determines whether the lender gains or loses a flat amount of the money they lent or a percentage of the earnings or 
+                losses. This field should be set to "Flat" if you are unsure of whether the borrower will be able to make a profit. If it is set to flat, you will still retain all of the 
+                money you lent minus the escrow fee. With the "Percent" option, the owner will earn a percentage of any gain or lose a percentage of any loss.</li><br>
+            <li><b>Minimum Borrower Constraints (Optional):</b> These are optional constraints that can be listed on your contract that restrict who is able to accept the MTC. If the user does
+                not meet all of the specified constraints, they will not be able to accept the MTC. The following options are currently available:
+                <ul>
+                    <li>Minimum Account Balance</li>
+                    <li>Minimum 30-day trading volume</li>
+                    <li>Minimum Contracts Completed</li>
+                    <li>Minimum Transactions Completed</li>
+                    <li>Minimum Liquidity Value</li>
+                </ul>
+            </li><br>
+            <li><b>User Intervention Constraints (Optional):</b> These are optional constraints that determine whether one of the contract parties are able to intervene in the contract. Any user 
+                that wishes to modify or manually terminate an MTC must ensure that the specified constraints are met. The following options are currently available:
+                <ul>
+                    <li>Profit Margin</li>
+                    <li>Interest Rate</li>
+                    <li>Latest Price</li>
+                </ul>
+            </li>
+        </ul><br><br>
+        <p>MTC's are only able to be canceled in 4 ways. In order for the contract to end and the loaned money to be returned to the owner, one of the following conditions must be met:</p><br>
+        <ul>
+            <li><b>Completion:</b> When the duration of the MTC runs out, and the End Point is reached, the contract will be automatically ended.</li>
+            <li><b>Stop Loss:</b> If the latest price goes below the specified Stop Loss Price, the MTC will be automatically ended.</li>
+            <li><b>Fulfillment:</b> If the latest price goes above the specified Fulfillment Price, the MTC will be automatically ended.</li>
+            <li><b>Termination:</b> If all User Intervention Constraints are met, either party can propose to end a contract at the current point.</li>
+        </ul><br><br>
+        <p>MTC's are able to be modified in 3 ways. If one of the parties are dissatisfied with the state of the agreement, they may propose one of the following:</p><br><br>
+        <ul>
+            <li><b>Duration Extension:</b> If both parties wish to continue with the contract after the duration, they may issue a duration extension request before the contract expires
+                that will modify the duration of the contract to increase by the amount specified in the request. Once both parties agree to the request, it will be confirmed and applied to 
+                the MTC. For this request, a handshake agreement is used. This means that one party will initiate the request and the other party must accept it at any time. Once the second 
+                party accepts the contract, the request will be confirmed.</li><br>
+            <li><b>Contract Renewal:</b> If both parties agree to reset the contract to its original state, they may perform a contract renewal. A contract renewal resets the contract to how 
+                it was when it was first accepted, in that any interest is erased and the price remains the same. This agreement also uses a handshake agreement method.</li><br>
+            <li><b>Contract Reformation:</b> If both parties wish to form the contract and set the price to a more appropriate level, they may initiate a contract reformation. This option 
+                reforms the contract, setting all owed money to zero and erasing any interest. It will also change the price to the current latest price, and allow the party that initially 
+                posted the MTC to modify the Stop Loss Price and Fulfillment Price. This agreement uses a double handshake agreement, where one party will make the request and attach a time limit 
+                to it. If the other party does not accept the request within the time limit, it will be automatically denied. It may then be reissued again by either party, or a new request can be 
+                made. The request will only be confirmed when it is accepted by the receiving party within the time limit.</li>
+        </ul>
+    </div>
+    <div class="aboutblockcontent" id="content5">
+        <h2>Loans</h2>
+        <p style="color: red;text-align: center;text-indent: 0px;">Under Construction</p>
+        <p>Loans are similar to MTC's, in that they are contractual and contain many of the same properties. However, loans allow the borrowing user to spend them on other trades that are not 
+           involved with the loan itself. This allows the borrower more liberty, but the borrower also assumes all of the risk. A pre-deficit stop loss is able to be specified, but no certain 
+           price threshold aside from zero is able to be set. If a pre-deficit stop loss is used, the contract will be valid unless manually terminated, the duration runs out, or the borrower 
+           runs out of funds in their account to cover any incurred losses. In the latter situation, all of the borrower's funds will be forfeited to the lender to make up for the loss, 
+           therefore allowing the lender to receive all of their loaned funds. The following are all of the possible contract properties that can be specified:</p><br>
+        <ul>
+            <li><b>Contract Amount:</b> This property is akin to the volume property of a basic order. It specifies the amount of currency that is to be loaned.</li><br>
+            <li><b>Contract Medium:</b> The currency in which the loan is to be measured and conducted in. This option will allow any currently available currency or cryptocurrency on the exchange, 
+                provided the lender has a balance greater than zero of the requested currency.</li><br>
+            <li><b>Interest Compound Rate (Optional):</b> The rate at which interest is compounded on the contract. This is an interval, and at each tick of the interval (1 hour, 
+                for example) the interest specified in the interest rate property will be compounded.</li><br>
+            <li><b>Interest Rate:</b> The amount of interest that is to be added to the amount owed back to the lender at each tick of the interest compiund rate property.</li><br>
+            <li><b>Duration:</b> The time length that the loan will be active before it is considered "completed" and automatically canceled.</li><br>
+            <li><b>Dividend Type:</b> The method by which the lender owns equity in the contract. This can be either "Flat" or "Percent." When the contract ends and the amount of money 
+                borrowed is returned with interest, the dividend type determines whether the lender gains or loses a flat amount of the money they lent or a percentage of the earnings or 
+                losses. This field should be set to "Flat" if you are unsure of whether the borrower will be able to make a profit. If it is set to flat, you will still retain all of the 
+                money you lent minus the escrow fee. With the "Percent" option, the owner will earn a percentage of any gain or lose a percentage of any loss.</li><br>
+            <li><b>Minimum Borrower Constraints (Optional):</b> These are optional constraints that can be listed on your contract that restrict who is able to accept the loan. If the user does
+                not meet all of the specified constraints, they will not be able to accept the loan. The following options are currently available:
+                <ul>
+                    <li>Minimum Account Balance</li>
+                    <li>Minimum 30-day trading volume</li>
+                    <li>Minimum Contracts Completed</li>
+                    <li>Minimum Transactions Completed</li>
+                    <li>Minimum Liquidity Value</li>
+                </ul>
+            </li><br>
+            <li><b>User Intervention Constraints (Optional):</b> These are optional constraints that determine whether one of the contract parties are able to intervene in the contract. Any user 
+                that wishes to modify or manually terminate a loan must ensure that the specified constraints are met. The following options are currently available:
+                <ul>
+                    <li>Profit Margin</li>
+                    <li>Interest Rate</li>
+                    <li>Latest Price</li>
+                </ul>
+            </li>
+        </ul><br><br>
+        <p>Loans are only able to be canceled in 2 ways. In order for the contract to end and the loaned money to be returned to the owner, one of the following conditions must be met:</p><br>
+        <ul>
+            <li><b>Completion:</b> When the duration of the loan runs out, and the End Point is reached, the contract will be automatically ended.</li>
+            <li><b>Termination:</b> If the user's combined loan balance and account balance is equal to or less than 0 and a pre-deficit stop loss is specified for the loan, all of the borrower's 
+                orders will be liquidated at their current point and the contract will be automatically ended, returning all remaining money in the user's account to the lender.</li>
+            <li><b>Termination:</b> If all User Intervention Constraints are met, either party can propose to end a contract at the current point.</li>
+        </ul><br><br>
+        <p>Loans are able to be modified in 3 ways. If one of the parties are dissatisfied with the state of the agreement, they may propose one of the following:</p><br><br>
+        <ul>
+            <li><b>Duration Extension:</b> If both parties wish to continue with the contract after the duration, they may issue a duration extension request before the contract expires
+                that will modify the duration of the contract to increase by the amount specified in the request. Once both parties agree to the request, it will be confirmed and applied to 
+                the MTC. For this request, a handshake agreement is used. This means that one party will initiate the request and the other party must accept it at any time. Once the second 
+                party accepts the contract, the request will be confirmed.</li><br>
+            <li><b>Contract Renewal:</b> If both parties agree to reset the contract to its original state, they may perform a contract renewal. A contract renewal resets the contract to how 
+                it was when it was first accepted, in that any interest is erased and the price remains the same. This agreement also uses a handshake agreement method.</li><br>
+            <li><b>Contract Reformation:</b> If both parties wish to form the contract and set the price to a more appropriate level, they may initiate a contract reformation. This option 
+                reforms the contract, setting all owed money to zero and erasing any interest. It will also change the price to the current latest price. This agreement uses a double handshake 
+                agreement, where one party will make the request and attach a time limit to it. If the other party does not accept the request within the time limit, it will be automatically denied. 
+                It may then be reissued again by either party, or a new request can be made. The request will only be confirmed when it is accepted by the receiving party within the time limit.</li>
+        </ul>
+    </div>
+    <div class="aboutblockcontent" id="content6">
+        <h2>Private Trades</h2>
+        <p style="color: red;text-align: center;text-indent: 0px;">Under Construction</p>
+        <p>Private trades are a simple swap of currency between two members. It is essentially a fully automated escrow service. A user will post a trade with a price and volume, and other users are 
+           able to request the trade. The posting user may also specify whether they want the trade to be automatically accepted or force handshake confirmation. If a handshake agreement is required, 
+           the user that posted the trade initially will have to confirm the request manually.</p>
+        <p>Private trades are useful for trading "off-market." If you want to specify your own price or trade with a certain user, you should use a private trade. Traditional basic orders have the 
+            same functionality, but you cannot control who you trade with. Private trades are a quick, easy way to trade in your cryptocurrency on your own terms.</p>
+    </div>
+    <div class="aboutblockcontent" id="content7">
+        <h2>Petition System</h2>
+        <p style="color: red;text-align: center;text-indent: 0px;">Under Construction</p>
+        <p>The Petition System is one of our most prized features. Because we believe that users need to be able to voice their opinions on what changes need to be made, a petition system is used. In 
+           this system, users will be able to submit up to 1 change they wish to be enacted. Other uses will be able to "Support" or "Oppose" changes that they agree with, similar to many popular 
+           upvote/downvote systems in social media. Users are also able to comment on any proposed change. We believe that this provides users with more opportunity to connect with both the exchange 
+           staff and developers as well as eachother.</p>
+        <p>With the privilege of free communication, however, comes responsibility. We don't wish for this feature to be abused, so we ask that all members keep coarse language to themselves and 
+           post informative comments that relate to the topic. In order to enforce this, new members are not able to recommend features or comment for 1 week, and we use an auto-ban tool that will 
+           search for any profanity in a post and and issue temporary petition system bans appropriately. In addition to these measures, a report button will be placed next to each comment that will 
+           flag it for review by a staff member. Keep in mind that reporting posts that do not violate any rules will be ignored and if a player consistently abuses this button will be disallowed 
+           from using it for a temporary amount of time.</p>
+    </div>
+    <div class="aboutblockcontent" id="content8">
+        <h2>Bitcoin</h2>
+        <p style="text-indent: 0px;text-align: center;"><a href=https://en.bitcoin.it/wiki/Main_Page>Bitcoin Wiki Article</a></p>
+        <p>Bitcoin is one type of cryptocurrency; in fact, it was the first. This section will give you an overview 
+        of what Bitcoin is and what its effects on society are.</p>
+        <p>Bitcoin was first introduced in 2009, but has only gained popularity 
+           recently, as its price has increased immensely since then. It was developed by a man who's pseduoname is "Satoshi Nakamoto," 
+           although this real name has never been revealed. Satoshi released his first open-source Bitcoin client in January of 2009, bringing to light 
+           the technology that was mentioned in a paper he wrote in 2009 detailing the implications of the network. Because of the open-source 
+           nature of his project, it was able to be duplicated. Hundreds of other Bitcoin look-alikes, dubbed "cryptocurrencies," have 
+           been created by those inspired with the new technology. Each cryptocurrency is developed with a slight variation to Bitcoin's original 
+           code, but all of them maintain the core technology. This allows the community to develop currencies that are safer, faster, take up less space, 
+           or simply have more features. This gives cryptocurrency its greatest power: it allows the users to determine the outcome. This idea is termed 
+           "decentralization" and is used quite often in favor of the technology.</p>
+        <p>The open-source nature of the project isn't the only 
+          thing that makes it decentralized, however. The "core technology" mentioned earlier includes the existence of the "Blockchain," 
+           which is a running ledger of every transaction ever conducted on the network. When Bitcoins are sent from one "wallet" to another, 
+           there is a network of computers, called "miners," that solve an extremely complex math problem to process the transaction. When 
+           that problem is solved, the transaction is recorded in the Blockchain and the miner is rewarded with a certain amount of Bitcoins. When a transaction 
+           is recorded in the Blockchain, the entire network of computers with a Bitcoin wallet that are online will share this change in the Blockchain until 
+           it is recorded on every computer. This makes all transactions impossible to replicate, protecting you from fraud. It also makes sure there's no way 
+           someone can steal whatever was bought and get a refund. Along with all of this, the cost of transactions are almost 0. This is a much more 
+           welcoming change from the traditional finance world, where fees for a single transaction can range from 1-2% of your total payment.</p>
+        <p>This was only a brush on the surface of Bitcoins. Click a link on the left to reach a page that covers specific topics in more detail, 
+           or use a search engine to look for Bitcoin websites. The official website, www.Bitcoin.org, is a great resource for learning.</p>
+    </div>
+    <div class="aboutblockcontent" id="content9">
+        <h2>The Network</h2>
+        <p style="text-indent: 0px;text-align: center;"><a href=https://en.bitcoin.it/wiki/Network>Bitcoin Wiki Article</a></p>
+        <p>The Bitcoin Network is an interesting concept. First, let us define what the "Network" refers to. The network is simply the collection of computers 
+           connected to eachother via the Bitcoin client/wallet. When a user opens their wallet, it will automatically sync with the "network," meaning that 
+           their client updates the blockchain stored in their client with any new transactions. Once it is updated, that means the client is up-to-date on all 
+           transactions that have occurred and are recorded in the Blockchain.</p>
+        <p>The network is what brings Bitcoin to life. It is the central identity of cryptocurrency, in that it is what holds the Blockchain. Each person in the 
+           network downloads a copy of the Blockchain, which is why it cannot be updated or changed; in order for something to be modified, at least 50% plus one 
+           clients must agree to that change. Otherwise, that change will not be "confirmed" and the change will not be made. This is where "majority rule" comes into 
+           play; the majority of the network must confirm a transaction. Once it is confirmed, it is encoded into the Blockchain and subsequent transactions will be 
+           added after it. Therefore, every time a transaction is made, it becomes more difficult for each previous transaction to be changed.</p><br>
+    </div>
+    <div class="aboutblockcontent" id="content10">
+        <h2>The Blockchain</h2>
+        <p style="text-indent: 0px;text-align: center;"><a href=https://en.bitcoin.it/wiki/Block_chain>Bitcoin Wiki Article</a></p>
+        <p>The Blockchain is the digital ledger that records every transaction made in Bitcoin. In basic terms, it is simply a string of data. It would look like gibberish 
+           if you looked at it, but your client is able to gather information on all transactions from it. It's a complex instrument based on cryptography, which is the art 
+           of encoding information. Whenever a transaction is made, the Blockchain adds a string of code to itself. As each client is updated with all of this information, the 
+           transaction gains more confirmations and is therefore harder to modify. The reason this is the case is simply because each block, meaning transaction, contains a hash, 
+           sort of like a key, to the next block. Whenever a new transaction is added, the hashes keep going, linking to the next one. Think of it as a long line of people 
+           pointing at eachother. If one person points away, like if a block was modified, then the line of hashes would be broken and all of those keys would have to be generated again, 
+           just like the people in the line would have to move to wherever that person is now pointing.</p>
+        <p>Another thing to think about, is what happens if two transactions are done extremely close to eachother? Each Bitcoin client will update their list with whichever block they 
+            are told about first. As the new blocks go around the network, eventually one will win. The "winning" block is placed into the Blockchain and the "losing" block is simply 
+            placed at the end of the queue and starts the process over again.</p><br>
+    </div>
+    <div class="aboutblockcontent" id="content11">
+        <h2>Mining</h2>
+        <p style="text-indent: 0px;text-align: center;"><a href=https://en.bitcoin.it/wiki/Mining>Bitcoin Wiki Article</a></p>
+        <p>One of the main things we haven't covered yet is one of the most important. We have talked about all of the things that the network and the Blockchain does, but who are the people 
+            that actually perform all of this heavy duty math? And how are new Bitcoins made? Doesn't it take a lot of computer power to do this heavy encoding? All of these questions' answers 
+            lie in the "mining" network. Bitcoin mining, is in it's most basic form, a way for transactions, or blocks, to be confirmed and simultaneously create new Bitcoins.</p>
+        <p>Bitcoin enthusiasts are able to devote their computers to be "miners." This means that their computer does all of the encoding, transacting, and heavy-duty computational actions that 
+           allow the Bitcoin network to operate. Mining software can be downloaded and used to perform the math that drives the network. What this means is that miners will "guess" numbers at 
+           high speeds. If the guessed number is below a certain target, then that miner has created a block that encodes transactions into the Blockchain and in return gains a sizable amount 
+           of Bitcoins for themselves. At the moment, the reward for one block is 25 BTC (the unit for Bitcoin is BTC). This will decrease over time, as the maximum number of Bitcoins will 
+           never surpass 21 million. Instead, every 210,000 blocks this amount will halve to 12.5 BTC, then 6.25 BTC, then 3.125 BTC, and so on. A block takes on average about 10 minutes to be 
+           generated, so the reward value will halve roughly every 4 years.</p>
+        <p>But if more computers become miners, won't blocks be generated quicker? Well, that would be the case if it weren't for "difficulty." Mining difficulty is what defines how had it is to 
+           guess that block-generating number. As more computational power is detected in the network, the Bitcoin protocol (the rules in each client that defines the behavior of the network) adjusts 
+           the range of numbers that could be "correct" to a lower amount, so that it is more difficult to guess. This is the mechanic that keeps the average block generation time around 10 minutes per 
+           block, and maintains the standard of inflation of the currency.</p>
+        <p>Yet there's another problem. With so many computers mining, how likely is it that you are going to be the lucky winner that correctly guesses the block? For this reason, mining pools were 
+           formed. Mining pools are simply groups of people that band together to mine as a team. Some pools have a different way of paying members, but almost all distribute the reward between its 
+           members. Of course, individual mining is still possible, but you are extremely unlikely to generate a block on your own.</p>
+    </div>
+    <div class="aboutblockcontent" id="content12">
+        <h2>API</h2>
+        <p>Our API is under construction; please come back later!</p>
+    </div>
+    <div class="aboutblockcontent" id="content13">
+        <h2>Resources</h2>
+        <p>We understand that Bitcoin and our exchange can be a bit overwhelming. Here are a few things that might help you understand them better:</p>
+        <ul>
+            <li><a href=https://www.bitcoin.org>Official Bitcoin Website</a> - Contains information on about Bitcoin</li>
+            <li><a href=https://www.blockchain.info>Blockchain Website</a> - Contains information on the Blockchain in a readable format</li>
+            <li><a href=https://en.bitcoin.it>Bitcoin Wiki</a> - Contains information about the specifics of Bitcoin and how it works</li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

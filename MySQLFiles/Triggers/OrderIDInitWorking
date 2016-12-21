@@ -1,0 +1,7 @@
+USE `exchange`;
+DELIMITER $$
+CREATE TRIGGER `IDInit` BEFORE INSERT ON `BasicOrderLog` FOR EACH ROW
+BEGIN
+	SET @RecordID = CONCAT(NEW.OrderNumber, "-", NEW.VersionNumber);
+	SET NEW.RecordID = @RecordID;
+END
