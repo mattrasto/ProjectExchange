@@ -12,17 +12,17 @@ I may go back and edit this, but a thorough overview is already given on my pers
 
 I used the following tools:
 
-	* Python (written in pydev in Eclipse)
-	* Django
-	* MySQL
+* Python (written in pydev in Eclipse)
+* Django
+* MySQL
 
 ## Transaction Model
 
 The transaction model goes (somewhat) like this:
 
-	1. User fiddles around on website and sends transaction request
-	2. Django (in aptly named Website folder) receives request and sends it to proper file in ExchangeMechanisms folder
-	3. ExchangeMechanisms fires appropriate functions to modify database and return status that propagates to user
+1. User fiddles around on website and sends transaction request
+2. Django (in aptly named Website folder) receives request and sends it to proper file in ExchangeMechanisms folder
+3. ExchangeMechanisms fires appropriate functions to modify database and return status that propagates to user
 
 ## Using the Code
 
